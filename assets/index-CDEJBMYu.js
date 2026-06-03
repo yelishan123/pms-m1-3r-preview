@@ -1,4 +1,4 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const i of document.querySelectorAll('link[rel="modulepreload"]'))r(i);new MutationObserver(i=>{for(const o of i)if(o.type==="childList")for(const n of o.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&r(n)}).observe(document,{childList:!0,subtree:!0});function a(i){const o={};return i.integrity&&(o.integrity=i.integrity),i.referrerPolicy&&(o.referrerPolicy=i.referrerPolicy),i.crossOrigin==="use-credentials"?o.credentials="include":i.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function r(i){if(i.ep)return;i.ep=!0;const o=a(i);fetch(i.href,o)}})();function Ce(){if(document.getElementById("pms-m1-styles"))return;const t=document.createElement("style");t.id="pms-m1-styles",t.textContent=Le,document.head.appendChild(t)}const Le=`
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))r(s);new MutationObserver(s=>{for(const o of s)if(o.type==="childList")for(const n of o.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&r(n)}).observe(document,{childList:!0,subtree:!0});function a(s){const o={};return s.integrity&&(o.integrity=s.integrity),s.referrerPolicy&&(o.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?o.credentials="include":s.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function r(s){if(s.ep)return;s.ep=!0;const o=a(s);fetch(s.href,o)}})();function Ke(){if(document.getElementById("pms-m1-styles"))return;const t=document.createElement("style");t.id="pms-m1-styles",t.textContent=We,document.head.appendChild(t)}const We=`
 /* ============================================================
  * 0. App Shell · M1-New.3R 四栏布局
  * ============================================================ */
@@ -1682,6 +1682,27 @@
 .dp-selected { background: var(--accent) !important; color: #fff; font-weight: 700; }
 .dp-other { color: var(--text-4); }
 
+/* 时间轴日期标题选择器面板（挂 body 的浮层外壳） */
+.tldp-panel {
+  background: var(--bg-0);
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0,0,0,.16), 0 2px 6px rgba(0,0,0,.06);
+  overflow: hidden;
+}
+.dp-footer {
+  display: flex; justify-content: flex-end; gap: 8px;
+  padding: 10px 12px; border-top: 1px solid var(--border);
+}
+.dp-cancel-btn {
+  font-size: 12px; color: var(--text-3); padding: 5px 12px;
+  border-radius: 7px; background: var(--bg-2); border: none; cursor: pointer;
+}
+.dp-confirm-btn {
+  font-size: 12px; font-weight: 700; color: #fff; background: var(--accent);
+  padding: 5px 16px; border-radius: 7px; border: none; cursor: pointer;
+}
+
 /* 时间列表 */
 .tp-list { max-height: 180px; overflow-y: auto; }
 .tp-list::-webkit-scrollbar { width: 4px; }
@@ -1917,24 +1938,24 @@
 .ai-slot-btn {
   margin-top: 8px; font-size: 11px; color: var(--accent); font-weight: 600; cursor: pointer;
 }
-`,Ht="wuxianjinbu-data-v1",vt="wuxianjinbu-v1";function q(){return new Date().toISOString()}function $(t=new Date){const e=t.getFullYear(),a=String(t.getMonth()+1).padStart(2,"0"),r=String(t.getDate()).padStart(2,"0");return`${e}-${a}-${r}`}function ie(t){return`${t}_${Math.random().toString(36).slice(2,10)}${Date.now().toString(36)}`}function ct(){const t=q(),e=$(),a=i=>{const o=new Date;return o.setDate(o.getDate()+i),$(o)},r=(i,o)=>{const n=new Date;return n.setHours(i,o,0,0),n.toISOString()};return{schemaVersion:vt,projects:[{id:"proj_main",name:"主业",colorToken:"--project-1",createdAt:t,updatedAt:t},{id:"proj_side",name:"副业",colorToken:"--project-2",createdAt:t,updatedAt:t},{id:"proj_life",name:"生活",colorToken:"--project-3",createdAt:t,updatedAt:t},{id:"proj_learn",name:"学习",colorToken:"--project-4",createdAt:t,updatedAt:t}],tasks:[{id:"t1",title:"准备 Q2 OKR 复盘材料及部门经营分析报告",projectId:"proj_main",priority:"P1",status:"todo",dueDate:a(3),scheduleStatus:"partial",aiEstimatedMinutes:120,createdAt:t,updatedAt:t,completedAt:null,description:"需要整理本季度 OKR 数据并撰写分析报告。"},{id:"t2",title:"整理 M1-New.3 验收反馈文档",projectId:"proj_main",priority:"P1",status:"todo",dueDate:e,scheduleStatus:"partial",aiEstimatedMinutes:90,createdAt:t,updatedAt:t,completedAt:null},{id:"t3",title:"副业自媒体本周选题规划",projectId:"proj_side",priority:"P2",status:"todo",dueDate:a(2),scheduleStatus:"unscheduled",aiEstimatedMinutes:45,createdAt:t,updatedAt:t,completedAt:null},{id:"t4",title:"给孩子预约暑期体检",projectId:"proj_life",priority:"P2",status:"todo",dueDate:a(4),scheduleStatus:"unscheduled",aiEstimatedMinutes:30,createdAt:t,updatedAt:t,completedAt:null},{id:"t5",title:"提交 5 月财务报销单据",projectId:"proj_main",priority:"P1",status:"todo",dueDate:a(-2),scheduleStatus:"overdue",aiEstimatedMinutes:30,createdAt:t,updatedAt:t,completedAt:null},{id:"t6",title:"读完《深度工作》第三章",projectId:"proj_learn",priority:"P3",status:"todo",dueDate:a(5),scheduleStatus:"unscheduled",aiEstimatedMinutes:60,createdAt:t,updatedAt:t,completedAt:null},{id:"t7",title:"更新团队 Wiki 文档结构",projectId:"proj_main",priority:"P3",status:"todo",scheduleStatus:"unscheduled",createdAt:t,updatedAt:t,completedAt:null},{id:"t8",title:"下周差旅订票",projectId:"proj_life",priority:"P2",status:"todo",dueDate:a(6),scheduleStatus:"unscheduled",aiEstimatedMinutes:20,createdAt:t,updatedAt:t,completedAt:null},{id:"t9",title:"厨房抽油烟机清理预约",projectId:null,priority:"P4",status:"todo",scheduleStatus:"unscheduled",createdAt:t,updatedAt:t,completedAt:null},{id:"t10",title:"上周 DFH 周报反思",projectId:"proj_main",priority:"P4",status:"todo",dueDate:a(-1),scheduleStatus:"overdue",createdAt:t,updatedAt:t,completedAt:null},{id:"t11",title:"整理项目档案 SOP",projectId:"proj_main",priority:"P4",status:"done",dueDate:a(-3),scheduleStatus:"done",createdAt:t,updatedAt:t,completedAt:t}],timeBlocks:[{id:"tb1",title:"晨间整理与复盘",taskId:null,source:"manual",start:r(7,30),end:r(8,0),status:"done",createdAt:t,updatedAt:t},{id:"tb2",title:"准备 Q2 OKR 复盘材料",taskId:"t1",source:"task",start:r(9,0),end:r(11,0),status:"done",createdAt:t,updatedAt:t},{id:"tb3",title:"午餐",taskId:null,source:"manual",start:r(12,0),end:r(13,0),status:"done",createdAt:t,updatedAt:t},{id:"tb4",title:"整理 M1-New.3 验收反馈文档",taskId:"t2",source:"task",start:r(14,0),end:r(16,30),status:"running",createdAt:t,updatedAt:t},{id:"tb5",title:"团队同步会议",taskId:null,source:"manual",start:r(16,30),end:r(17,0),status:"planned",createdAt:t,updatedAt:t},{id:"tb6",title:"副业自媒体选题",taskId:"t3",source:"task",start:r(19,0),end:r(19,45),status:"planned",createdAt:t,updatedAt:t},{id:"tb7",title:"晚间复盘与规划",taskId:null,source:"manual",start:r(21,0),end:r(22,0),status:"planned",createdAt:t,updatedAt:t}],settings:{firstDayOfWeek:"monday"},meta:{createdAt:t,updatedAt:t}}}let P=null,mt=null;function oe(){if(P)return P;try{const t=localStorage.getItem(Ht);if(!t)return P=ct(),F(),P;const e=JSON.parse(t);return Ue(e)?(P=e,P):(mt="数据结构异常，已恢复为默认种子",P=ct(),P)}catch{return mt="本地数据解析失败，已恢复为默认种子",P=ct(),P}}function F(){if(P){P.meta.updatedAt=q();try{localStorage.setItem(Ht,JSON.stringify(P))}catch(t){console.warn("[wuxianjinbu] saveStore 失败",t)}}}function He(){return P=ct(),mt=null,F(),P}function h(){return oe()}function _e(){return mt}const Ne=new Set(["P1","P2","P3","P4"]),qe=new Set(["todo","done"]),Fe=new Set(["planned","running","done"]),Re=new Set(["--project-1","--project-2","--project-3","--project-4"]);function I(t){return typeof t=="string"&&t.length>0}function Oe(t){if(!t||typeof t!="object")return!1;const e=t;return!(!I(e.id)||typeof e.title!="string"||e.projectId!==null&&!I(e.projectId)||typeof e.priority!="string"||!Ne.has(e.priority)||typeof e.status!="string"||!qe.has(e.status)||!I(e.createdAt)||!I(e.updatedAt)||e.dueDate!==void 0&&typeof e.dueDate!="string"||e.completedAt!==void 0&&e.completedAt!==null&&typeof e.completedAt!="string")}function Ve(t){if(!t||typeof t!="object")return!1;const e=t;return!(!I(e.id)||!I(e.name)||typeof e.colorToken!="string"||!Re.has(e.colorToken)||!I(e.createdAt)||!I(e.updatedAt))}function Ke(t){if(!t||typeof t!="object")return!1;const e=t;return!(!I(e.id)||typeof e.title!="string"||e.taskId!==void 0&&e.taskId!==null&&!I(e.taskId)||!I(e.start)||!I(e.end)||typeof e.status!="string"||!Fe.has(e.status)||!I(e.createdAt)||!I(e.updatedAt))}function Ye(t){if(!t||typeof t!="object")return!1;const e=t;return e.firstDayOfWeek==="monday"||e.firstDayOfWeek==="sunday"}function We(t){if(!t||typeof t!="object")return!1;const e=t;return I(e.createdAt)&&I(e.updatedAt)}function Ue(t){if(!t||typeof t!="object")return!1;const e=t;return!(e.schemaVersion!==vt||!Array.isArray(e.tasks)||!e.tasks.every(Oe)||!Array.isArray(e.projects)||!e.projects.every(Ve)||!Array.isArray(e.timeBlocks)||!e.timeBlocks.every(Ke)||!Ye(e.settings)||!We(e.meta))}const s={brand:{name:"无限进步",tagline:"冷静智能个人指挥系统"},topbar:{searchPlaceholder:"搜索任务或命令",devLog:"开发日志",settings:"设置"},sidebar:{nav:{timeblock:"今日时间块",inbox:"收件箱",upcoming:"即将到来",allTasks:"全部任务",completed:"已完成",insight:"数据洞察",planning:"周期规划"},sectionLabel:{project:"项目",kr:"本期关键结果"},viewAll:"查看全部"},timeline:{today:"今天",prevDay:"前一天",nextDay:"后一天",arrangeBtn:"安排日程",dayView:"日",weekView:"周",monthView:"月",comingSoon:"即将支持",addBtn:"新增时间块",emptyTitle:"今天暂无时间块",emptyHint:"规划执行时段，将任务落实到时间",crossDayContinues:"延续至次日",crossDayFrom:"来自前一日",blockCountTpl:(t,e)=>`今日 ${t} 个时间块 · 已完成 ${e}`,noBlocksToday:"今天暂无时间块"},pool:{title:"任务池",collapse:"收起",expand:"展开",arrange:"安排",rearrange:"再排",filters:{today:"今日",highPri:"高优",upcoming:"到期",unscheduled:"未排",partial:"已部分",overdue:"逾期"},statusLabel:{unscheduled:"未安排",partial:"已安排部分",scheduled:"已安排",done:"已完成",overdue:"逾期"},noTasks:"暂无任务",noTasksHint:"切换筛选项或新增任务"},block:{actionStart:"开始",actionDone:"完成",actionReview:"复盘",sourcePrefixTask:"来源：任务",sourcePrefixPeriodic:"来源：周期事项",sourcePrefixAiDraft:"来源：AI 草稿",statusRunningBadge:"进行中"},popover:{titleCreate:"新增时间块",titleEdit:"编辑时间块",fieldStatus:"状态",fieldTime:"时间段",fieldDate:"日期",placeholder:"时间块名称",statusPlanned:"待办",statusRunning:"进行中",statusDone:"已完成",btnSave:"保存",btnCancel:"取消",btnDelete:"删除",btnReview:"复盘",errTitle:"请输入时间块名称",errEndEarly:"结束时间早于开始时间，是否视为次日？",confirmNextDay:"视为次日",confirmNo:"不是",deleteConfirmTitle:"确认删除此时间块？",deleteConfirmDesc:"关联任务不会受到影响。",deleteConfirmOk:"确认删除",deleteConfirmCancel:"取消"},datePicker:{today:"今天",tomorrow:"明天",thisWeekFriday:"本周五",nextMonday:"下周一",weekdays:["一","二","三","四","五","六","日"]},timePicker:{quickAdd30m:"+30分",quickAdd1h:"+1小时",quickAdd2h:"+2小时",quickToNextHour:"到整点",nowSuffix:" · 现在"},review:{title:"完成复盘",placeholder:"这次执行有什么问题？下次需要注意什么？",aiHint:"复盘内容将作为未来 AI 建议的参考上下文",skip:"跳过复盘",save:"保存复盘"},right:{sectionCapture:"快速捕捉",sectionRunning:"当前进行",sectionProgress:"今日进度",sectionPeriodic:"周期事项",sectionAi:"AI 建议",capturePlaceholder:"记录想法或任务",none:"暂无内容",aiNotConfigured:"配置 Deepseek API 后，AI 将在这里给出今日排程建议",aiConfigBtn:"去配置"},ai:{label:"建议",reason:"原因",action:"操作",accept:"采纳",ignore:"忽略",editAndAccept:"编辑后采纳",arrange:{cardTitle:"安排日程",unconfiguredTitle:"AI 排程需要先配置模型 API",unconfiguredDesc:"配置完成后，AI 将分析你的任务池并生成个性化日程草案。",loadingTitle:"正在分析任务池并生成日程草案",errorTitle:"生成失败",errorDesc:"网络错误或 API 额度不足，请重试或使用模拟建议。",mockBtn:"使用模拟建议",cancelBtn:"取消",prevBtn:"上一步",nextBtn:"下一步",applyBtn:"应用日程",regenerateBtn:"重新生成",pages:{p1Title:"你想安排哪一天的日程？",p1Today:"今天",p1Tomorrow:"明天",p1Dayafter:"后天",p1Custom:"选择具体日期",p2Title:"这一天你的可用时间范围是？",p2Default:"使用默认时间 07:00 — 23:00",p2Late:"从 08:00 开始",p2Early:"结束于 22:00",p3Title:"以下固定安排是否全部保留？",p3Hint:"取消勾选的安排不纳入 AI 排程参考",p4Title:"AI 推荐优先处理以下任务，请选择：",p4Hint:"最多选择 6 个",p5Title:"以下任务今天是否暂不安排？",p6Title:"AI 生成日程草案如下，请确认："}}},stage:{segDay:"日",segWeek:"周",segMonth:"月"},buttons:{danger:"删除"},states:{emptyTitle:"暂无内容",emptyHint:"这里还没有任何记录",loading:"加载中",loadFailed:"加载失败，请重试",inboxEmpty:"收件箱为空",inboxHint:"临时任务和灵感会先放在这里"},status:{notStarted:"待办",done:"已完成"},drawer:{close:"关闭",title:"任务详情",project:"项目",priority:"优先级",status:"状态",due:"截止",description:"描述",aiSection:"AI 建议",saveNotice:"正在保存",saved:"已保存",empty:"请选择一个任务"},preview:{title:"组件预览",backToMain:"回到主页",buttons:"按钮",inputs:"输入",cards:"卡片",ai:"AI 建议",states:"状态",btnDefault:"默认",btnHover:"悬停",btnFocus:"聚焦",btnDisabled:"禁用",inputPlaceholder:"请输入内容",searchPlaceholder:"请输入搜索关键词",textareaPlaceholder:"请输入备注",selectDate:"选择日期"}},Ze='xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"';function D(t,e=16){return`<svg ${Ze.replace('width="16" height="16"',`width="${e}" height="${e}"`)}>${t}</svg>`}const C={search:D('<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>'),changelog:D('<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/><line x1="8" y1="9" x2="10" y2="9"/>'),settings:D('<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>'),inbox:D('<polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/>'),calendar:D('<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>'),clock:D('<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>'),list:D('<line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>'),check:D('<polyline points="20 6 9 17 4 12"/>'),checkSm:D('<polyline points="20 6 9 17 4 12"/>',12),chart:D('<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>'),cycle:D('<polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.51"/>'),arrowL:D('<line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>',14),arrowR:D('<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>',14),close:D('<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>',14),plus:D('<line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>'),flag:D('<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/>')},Ge=`
+`,Rt="wuxianjinbu-data-v1",bt="wuxianjinbu-v1";function F(){return new Date().toISOString()}function $(t=new Date){const e=t.getFullYear(),a=String(t.getMonth()+1).padStart(2,"0"),r=String(t.getDate()).padStart(2,"0");return`${e}-${a}-${r}`}function ue(t){return`${t}_${Math.random().toString(36).slice(2,10)}${Date.now().toString(36)}`}function ut(){const t=F(),e=$(),a=s=>{const o=new Date;return o.setDate(o.getDate()+s),$(o)},r=(s,o)=>{const n=new Date;return n.setHours(s,o,0,0),n.toISOString()};return{schemaVersion:bt,projects:[{id:"proj_main",name:"主业",colorToken:"--project-1",createdAt:t,updatedAt:t},{id:"proj_side",name:"副业",colorToken:"--project-2",createdAt:t,updatedAt:t},{id:"proj_life",name:"生活",colorToken:"--project-3",createdAt:t,updatedAt:t},{id:"proj_learn",name:"学习",colorToken:"--project-4",createdAt:t,updatedAt:t}],tasks:[{id:"t1",title:"准备 Q2 OKR 复盘材料及部门经营分析报告",projectId:"proj_main",priority:"P1",status:"todo",dueDate:a(3),scheduleStatus:"partial",aiEstimatedMinutes:120,createdAt:t,updatedAt:t,completedAt:null,description:"需要整理本季度 OKR 数据并撰写分析报告。"},{id:"t2",title:"整理 M1-New.3 验收反馈文档",projectId:"proj_main",priority:"P1",status:"todo",dueDate:e,scheduleStatus:"partial",aiEstimatedMinutes:90,createdAt:t,updatedAt:t,completedAt:null},{id:"t3",title:"副业自媒体本周选题规划",projectId:"proj_side",priority:"P2",status:"todo",dueDate:a(2),scheduleStatus:"unscheduled",aiEstimatedMinutes:45,createdAt:t,updatedAt:t,completedAt:null},{id:"t4",title:"给孩子预约暑期体检",projectId:"proj_life",priority:"P2",status:"todo",dueDate:a(4),scheduleStatus:"unscheduled",aiEstimatedMinutes:30,createdAt:t,updatedAt:t,completedAt:null},{id:"t5",title:"提交 5 月财务报销单据",projectId:"proj_main",priority:"P1",status:"todo",dueDate:a(-2),scheduleStatus:"overdue",aiEstimatedMinutes:30,createdAt:t,updatedAt:t,completedAt:null},{id:"t6",title:"读完《深度工作》第三章",projectId:"proj_learn",priority:"P3",status:"todo",dueDate:a(5),scheduleStatus:"unscheduled",aiEstimatedMinutes:60,createdAt:t,updatedAt:t,completedAt:null},{id:"t7",title:"更新团队 Wiki 文档结构",projectId:"proj_main",priority:"P3",status:"todo",scheduleStatus:"unscheduled",createdAt:t,updatedAt:t,completedAt:null},{id:"t8",title:"下周差旅订票",projectId:"proj_life",priority:"P2",status:"todo",dueDate:a(6),scheduleStatus:"unscheduled",aiEstimatedMinutes:20,createdAt:t,updatedAt:t,completedAt:null},{id:"t9",title:"厨房抽油烟机清理预约",projectId:null,priority:"P4",status:"todo",scheduleStatus:"unscheduled",createdAt:t,updatedAt:t,completedAt:null},{id:"t10",title:"上周 DFH 周报反思",projectId:"proj_main",priority:"P4",status:"todo",dueDate:a(-1),scheduleStatus:"overdue",createdAt:t,updatedAt:t,completedAt:null},{id:"t11",title:"整理项目档案 SOP",projectId:"proj_main",priority:"P4",status:"done",dueDate:a(-3),scheduleStatus:"done",createdAt:t,updatedAt:t,completedAt:t}],timeBlocks:[{id:"tb1",title:"晨间整理与复盘",taskId:null,source:"manual",start:r(7,30),end:r(8,0),status:"done",createdAt:t,updatedAt:t},{id:"tb2",title:"准备 Q2 OKR 复盘材料",taskId:"t1",source:"task",start:r(9,0),end:r(11,0),status:"done",createdAt:t,updatedAt:t},{id:"tb3",title:"午餐",taskId:null,source:"manual",start:r(12,0),end:r(13,0),status:"done",createdAt:t,updatedAt:t},{id:"tb4",title:"整理 M1-New.3 验收反馈文档",taskId:"t2",source:"task",start:r(14,0),end:r(16,30),status:"running",createdAt:t,updatedAt:t},{id:"tb5",title:"团队同步会议",taskId:null,source:"manual",start:r(16,30),end:r(17,0),status:"planned",createdAt:t,updatedAt:t},{id:"tb6",title:"副业自媒体选题",taskId:"t3",source:"task",start:r(19,0),end:r(19,45),status:"planned",createdAt:t,updatedAt:t},{id:"tb7",title:"晚间复盘与规划",taskId:null,source:"manual",start:r(21,0),end:r(22,0),status:"planned",createdAt:t,updatedAt:t}],settings:{firstDayOfWeek:"monday"},meta:{createdAt:t,updatedAt:t}}}let M=null,gt=null;function ve(){if(M)return M;try{const t=localStorage.getItem(Rt);if(!t)return M=ut(),R(),M;const e=JSON.parse(t);return sa(e)?(M=e,M):(gt="数据结构异常，已恢复为默认种子",M=ut(),M)}catch{return gt="本地数据解析失败，已恢复为默认种子",M=ut(),M}}function R(){if(M){M.meta.updatedAt=F();try{localStorage.setItem(Rt,JSON.stringify(M))}catch(t){console.warn("[wuxianjinbu] saveStore 失败",t)}}}function Ue(){return M=ut(),gt=null,R(),M}function h(){return ve()}function Ze(){return gt}const Ge=new Set(["P1","P2","P3","P4"]),Je=new Set(["todo","done"]),Xe=new Set(["planned","running","done"]),Qe=new Set(["--project-1","--project-2","--project-3","--project-4"]);function S(t){return typeof t=="string"&&t.length>0}function ta(t){if(!t||typeof t!="object")return!1;const e=t;return!(!S(e.id)||typeof e.title!="string"||e.projectId!==null&&!S(e.projectId)||typeof e.priority!="string"||!Ge.has(e.priority)||typeof e.status!="string"||!Je.has(e.status)||!S(e.createdAt)||!S(e.updatedAt)||e.dueDate!==void 0&&typeof e.dueDate!="string"||e.completedAt!==void 0&&e.completedAt!==null&&typeof e.completedAt!="string")}function ea(t){if(!t||typeof t!="object")return!1;const e=t;return!(!S(e.id)||!S(e.name)||typeof e.colorToken!="string"||!Qe.has(e.colorToken)||!S(e.createdAt)||!S(e.updatedAt))}function aa(t){if(!t||typeof t!="object")return!1;const e=t;return!(!S(e.id)||typeof e.title!="string"||e.taskId!==void 0&&e.taskId!==null&&!S(e.taskId)||!S(e.start)||!S(e.end)||typeof e.status!="string"||!Xe.has(e.status)||!S(e.createdAt)||!S(e.updatedAt))}function ra(t){if(!t||typeof t!="object")return!1;const e=t;return e.firstDayOfWeek==="monday"||e.firstDayOfWeek==="sunday"}function ia(t){if(!t||typeof t!="object")return!1;const e=t;return S(e.createdAt)&&S(e.updatedAt)}function sa(t){if(!t||typeof t!="object")return!1;const e=t;return!(e.schemaVersion!==bt||!Array.isArray(e.tasks)||!e.tasks.every(ta)||!Array.isArray(e.projects)||!e.projects.every(ea)||!Array.isArray(e.timeBlocks)||!e.timeBlocks.every(aa)||!ra(e.settings)||!ia(e.meta))}const i={brand:{name:"无限进步",tagline:"冷静智能个人指挥系统"},topbar:{searchPlaceholder:"搜索任务或命令",devLog:"开发日志",settings:"设置"},sidebar:{nav:{timeblock:"今日时间块",inbox:"收件箱",upcoming:"即将到来",allTasks:"全部任务",completed:"已完成",insight:"数据洞察",planning:"周期规划"},sectionLabel:{project:"项目",kr:"本期关键结果"},viewAll:"查看全部"},timeline:{today:"今天",prevDay:"前一天",nextDay:"后一天",arrangeBtn:"安排日程",dayView:"日",weekView:"周",monthView:"月",comingSoon:"即将支持",addBtn:"新增时间块",emptyTitle:"今天暂无时间块",emptyHint:"规划执行时段，将任务落实到时间",crossDayContinues:"延续至次日",crossDayFrom:"来自前一日",blockCountTpl:(t,e)=>`今日 ${t} 个时间块 · 已完成 ${e}`,noBlocksToday:"今天暂无时间块"},pool:{title:"任务池",collapse:"收起",expand:"展开",arrange:"安排",rearrange:"再排",filters:{today:"今日",highPri:"高优",upcoming:"到期",unscheduled:"未排",partial:"已部分",overdue:"逾期"},statusLabel:{unscheduled:"未安排",partial:"已安排部分",scheduled:"已安排",done:"已完成",overdue:"逾期"},noTasks:"暂无任务",noTasksHint:"切换筛选项或新增任务"},block:{actionStart:"开始",actionDone:"完成",actionReview:"复盘",sourcePrefixTask:"来源：任务",sourcePrefixPeriodic:"来源：周期事项",sourcePrefixAiDraft:"来源：AI 草稿",statusRunningBadge:"进行中"},popover:{titleCreate:"新增时间块",titleEdit:"编辑时间块",fieldStatus:"状态",fieldTime:"时间段",fieldDate:"日期",placeholder:"时间块名称",statusPlanned:"待办",statusRunning:"进行中",statusDone:"已完成",btnSave:"保存",btnCancel:"取消",btnDelete:"删除",btnReview:"复盘",errTitle:"请输入时间块名称",errEndEarly:"结束时间早于开始时间，是否视为次日？",confirmNextDay:"视为次日",confirmNo:"不是",deleteConfirmTitle:"确认删除此时间块？",deleteConfirmDesc:"关联任务不会受到影响。",deleteConfirmOk:"确认删除",deleteConfirmCancel:"取消"},datePicker:{today:"今天",tomorrow:"明天",thisWeekFriday:"本周五",nextMonday:"下周一",cancel:"取消",confirm:"确认",weekdays:["一","二","三","四","五","六","日"]},timePicker:{quickAdd30m:"+30分",quickAdd1h:"+1小时",quickAdd2h:"+2小时",quickToNextHour:"到整点",nowSuffix:" · 现在"},review:{title:"完成复盘",placeholder:"这次执行有什么问题？下次需要注意什么？",aiHint:"复盘内容将作为未来 AI 建议的参考上下文",skip:"跳过复盘",save:"保存复盘"},right:{sectionCapture:"快速捕捉",sectionRunning:"当前进行",sectionProgress:"今日进度",sectionPeriodic:"周期事项",sectionAi:"AI 建议",capturePlaceholder:"记录想法或任务",none:"暂无内容",aiNotConfigured:"配置 Deepseek API 后，AI 将在这里给出今日排程建议",aiConfigBtn:"去配置"},ai:{label:"建议",reason:"原因",action:"操作",accept:"采纳",ignore:"忽略",editAndAccept:"编辑后采纳",arrange:{cardTitle:"安排日程",unconfiguredTitle:"AI 排程需要先配置模型 API",unconfiguredDesc:"配置完成后，AI 将分析你的任务池并生成个性化日程草案。",loadingTitle:"正在分析任务池并生成日程草案",errorTitle:"生成失败",errorDesc:"网络错误或 API 额度不足，请重试或使用模拟建议。",mockBtn:"使用模拟建议",cancelBtn:"取消",prevBtn:"上一步",nextBtn:"下一步",applyBtn:"应用日程",regenerateBtn:"重新生成",pages:{p1Title:"你想安排哪一天的日程？",p1Today:"今天",p1Tomorrow:"明天",p1Dayafter:"后天",p1Custom:"选择具体日期",p2Title:"这一天你的可用时间范围是？",p2Default:"使用默认时间 07:00 — 23:00",p2Late:"从 08:00 开始",p2Early:"结束于 22:00",p3Title:"以下固定安排是否全部保留？",p3Hint:"取消勾选的安排不纳入 AI 排程参考",p4Title:"AI 推荐优先处理以下任务，请选择：",p4Hint:"最多选择 6 个",p5Title:"以下任务今天是否暂不安排？",p6Title:"AI 生成日程草案如下，请确认："}}},stage:{segDay:"日",segWeek:"周",segMonth:"月"},buttons:{danger:"删除"},states:{emptyTitle:"暂无内容",emptyHint:"这里还没有任何记录",loading:"加载中",loadFailed:"加载失败，请重试",inboxEmpty:"收件箱为空",inboxHint:"临时任务和灵感会先放在这里"},status:{notStarted:"待办",done:"已完成"},drawer:{close:"关闭",title:"任务详情",project:"项目",priority:"优先级",status:"状态",due:"截止",description:"描述",aiSection:"AI 建议",saveNotice:"正在保存",saved:"已保存",empty:"请选择一个任务"},preview:{title:"组件预览",backToMain:"回到主页",buttons:"按钮",inputs:"输入",cards:"卡片",ai:"AI 建议",states:"状态",btnDefault:"默认",btnHover:"悬停",btnFocus:"聚焦",btnDisabled:"禁用",inputPlaceholder:"请输入内容",searchPlaceholder:"请输入搜索关键词",textareaPlaceholder:"请输入备注",selectDate:"选择日期"}},oa='xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"';function T(t,e=16){return`<svg ${oa.replace('width="16" height="16"',`width="${e}" height="${e}"`)}>${t}</svg>`}const L={search:T('<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>'),changelog:T('<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/><line x1="8" y1="9" x2="10" y2="9"/>'),settings:T('<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>'),inbox:T('<polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/>'),calendar:T('<rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>'),clock:T('<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>'),list:T('<line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>'),check:T('<polyline points="20 6 9 17 4 12"/>'),checkSm:T('<polyline points="20 6 9 17 4 12"/>',12),chart:T('<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>'),cycle:T('<polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.51"/>'),arrowL:T('<line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>',14),arrowR:T('<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>',14),close:T('<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>',14),plus:T('<line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>'),flag:T('<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/>')},na=`
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024" role="img" aria-label="无限进步">
   <path fill="#2B54C9" d="M513.313 466C526.778 455.319 540.325 444.742 553.952 434.27C560.396 429.327 569.749 421.716 576.232 417.504C605.39 398.56 637.438 389.647 672.238 393.891C703.301 397.583 731.636 413.43 751.044 437.963C761.43 451.351 769.537 468.172 774.2 484.403C774.804 487.249 775.939 491.928 776.084 494.676C777.94 504.03 778.416 524.719 775.19 533.573C770.356 562.75 751.574 591.013 727.544 608.155C699.442 627.995 664.614 635.87 630.709 630.05C576.183 620.729 553.29 585.806 511.455 558.086C495.642 569.941 480.395 583.656 464.413 595.531C456.75 601.225 448.66 608.434 440.182 612.841C433.061 616.937 420.924 622.944 413.088 624.902C410.945 625.674 407.968 626.596 405.777 627.148C370.733 635.983 339.526 633.19 308.197 615.389C280.555 599.342 260.345 573.054 251.942 542.216C244.23 513.068 248.373 482.053 263.464 455.951C280.615 426.113 306.265 405.23 339.66 396.371C368.719 388.663 410.534 393.634 436.437 408.746C443.863 412.412 450.103 417.462 456.827 422.145C475.529 435.172 494.15 454.266 513.313 466ZM345.658 587.599C375.701 575.937 391.575 562.548 416.269 542.977C429.442 532.725 442.394 522.193 455.117 511.388C444.663 502.559 433.408 493.983 422.764 485.39C397.201 464.752 380.655 450.801 349.388 439.8C309.483 480.403 307.407 545.139 345.658 587.599ZM679.402 584.494C679.707 583.674 679.548 583.9 680.106 583.219C696.427 563.292 706.672 536.181 707.081 510.316C707.395 484.414 697.428 459.444 679.365 440.877C676.108 439.662 661.872 445.683 658.626 447.132C633.212 458.471 613.216 477.409 591.547 494.471C587.948 497.305 571.988 509.268 569.957 511.383C579.502 519.657 591.354 528.152 601.269 535.963C622.329 552.554 641.983 571.163 667.105 581.451C669.731 582.527 675.406 585.033 678.234 585.136L679.402 584.494Z"/>
 </svg>
-`.trim();function Je(){return`
+`.trim();function da(){return`
     <header class="pms-topbar" role="banner">
       <div class="pms-brand-bar">
-        <div class="pms-brand-bar-mark">${Ge}</div>
-        <div class="pms-brand-bar-name">${s.brand.name}</div>
+        <div class="pms-brand-bar-mark">${na}</div>
+        <div class="pms-brand-bar-name">${i.brand.name}</div>
       </div>
 
       <div class="pms-global-search">
-        <span class="pms-global-search-icon">${C.search}</span>
+        <span class="pms-global-search-icon">${L.search}</span>
         <input
           id="pms-global-search-input"
           class="pms-global-search-input"
           type="text"
-          placeholder="${s.topbar.searchPlaceholder}"
+          placeholder="${i.topbar.searchPlaceholder}"
           autocomplete="off"
         />
         <span class="pms-global-search-kbd" aria-hidden="true">⌘K</span>
@@ -1942,53 +1963,53 @@
 
       <div class="pms-topbar-tools">
         <button class="pms-topbar-tool-button" data-act="open-changelog" type="button">
-          ${C.changelog}<span>${s.topbar.devLog}</span>
+          ${L.changelog}<span>${i.topbar.devLog}</span>
         </button>
         <button class="pms-topbar-tool-button" data-act="open-settings" type="button">
-          ${C.settings}<span>${s.topbar.settings}</span>
+          ${L.settings}<span>${i.topbar.settings}</span>
         </button>
       </div>
     </header>
-  `}function _t(t){const[e,a,r]=t.split("-").map(Number);return new Date(e,a-1,r,0,0,0,0)}function ne(t){const[e,a,r]=t.split("-").map(Number);return new Date(e,a-1,r,23,59,59,999)}function de(t,e,a){const r=new Date(t).getTime(),i=new Date(e).getTime(),o=_t(a).getTime(),n=ne(a).getTime();return r<n&&i>o}function le(t,e){const a=new Date(t),r=_t(e),i=a.getTime()-r.getTime(),o=Math.floor(i/6e4);return Math.max(0,Math.min(o,24*60))}function Xe(t,e,a){const r=le(t,a),i=new Date(e),o=ne(a),n=i.getTime()<o.getTime()?i:o,d=Math.floor((n.getTime()-_t(a).getTime())/6e4);return Math.max(0,Math.min(d,24*60)-r)}function Qe(t,e){const a=new Date(t),r=new Date(e);return a.getFullYear()!==r.getFullYear()||a.getMonth()!==r.getMonth()||a.getDate()!==r.getDate()}function ta(t,e,a){const r=Ut(t),i=Ut(e);return r===a&&i===a?"same_day":r===a?"cross_start":"cross_end"}function Ut(t){const e=new Date(t),a=e.getFullYear(),r=String(e.getMonth()+1).padStart(2,"0"),i=String(e.getDate()).padStart(2,"0");return`${a}-${r}-${i}`}function U(t){const e=new Date(t);return`${gt(e.getHours())}:${gt(e.getMinutes())}`}function zt(){const t=new Date;return t.getHours()*60+t.getMinutes()}function Q(t,e){const[a,r]=e.split(":").map(Number),[i,o,n]=t.split("-").map(Number);return new Date(i,o-1,n,a,r,0,0).toISOString()}function ce(t,e){const[a,r,i]=e.split("-").map(Number),[o,n,d]=t.split("-").map(Number),c=new Date(a,r-1,i).getTime(),p=new Date(o,n-1,d).getTime(),u=Math.round((p-c)/864e5);if(u===0)return"今天";if(u===1)return"明天";if(u===2)return"后天";if(u===-1)return"昨天";const g=new Date(o,n-1,d);return`${g.getMonth()+1}月${g.getDate()}日`}function ea(t){const[e,a,r]=t.split("-").map(Number),o=new Date(e,a-1,r).getDay(),n=o===0?5:(5-o+7)%7,d=new Date(e,a-1,r+(n===0?7:n));return`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`}function aa(t){const[e,a,r]=t.split("-").map(Number),o=new Date(e,a-1,r).getDay(),n=o===0?1:(8-o)%7||7,d=new Date(e,a-1,r+n);return`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`}function tt(t,e){const[a,r,i]=t.split("-").map(Number),o=new Date(a,r-1,i+e);return`${o.getFullYear()}-${String(o.getMonth()+1).padStart(2,"0")}-${String(o.getDate()).padStart(2,"0")}`}function K(t){const e=Math.floor(t/60)%24,a=t%60;return`${gt(e)}:${gt(a)}`}function et(t){const[e,a]=t.split(":").map(Number);return(e||0)*60+(a||0)}function ra(t){if(t<60)return`${t}分钟`;const e=Math.floor(t/60),a=t%60;return a===0?`${e}小时`:`${e}小时${a}分钟`}function bt(t,e=15){return Math.round(t/e)*e}function sa(t,e){const a=new Date(t,e-1,1),r=new Date(t,e,0);let i=a.getDay();i=i===0?6:i-1;const o=[];for(let d=i-1;d>=0;d--){const c=new Date(t,e-1,-d);o.push({key:Dt(c),date:c.getDate(),isCurrentMonth:!1})}for(let d=1;d<=r.getDate();d++){const c=new Date(t,e-1,d);o.push({key:Dt(c),date:d,isCurrentMonth:!0})}let n=1;for(;o.length<42;){const d=new Date(t,e,n++);o.push({key:Dt(d),date:d.getDate(),isCurrentMonth:!1})}return o}function Dt(t){return`${t.getFullYear()}-${String(t.getMonth()+1).padStart(2,"0")}-${String(t.getDate()).padStart(2,"0")}`}function gt(t){return String(t).padStart(2,"0")}function st(){return $()}function ia(t){return t.status!=="done"&&t.projectId===null}function oa(){return h().tasks.filter(ia)}function pe(){return oa().length}function na(){const t=st();return h().tasks.filter(e=>e.status!=="done"&&!!e.dueDate&&e.dueDate>=t)}function da(){return na().length}function yt(){return h().tasks.filter(t=>t.status!=="done")}function ue(){return yt().length}function la(){return h().tasks.filter(t=>t.status==="done")}function ve(){return la().length}function ca(t){return h().tasks.filter(e=>e.projectId===t&&e.status!=="done").length}function it(t){return h().timeBlocks.filter(e=>de(e.start,e.end,t))}function pa(t){return h().timeBlocks.find(e=>e.status==="running"&&de(e.start,e.end,t))??null}function me(t){const e=t??st(),a=it(e),r=a.filter(n=>n.status==="done").length,i=a.length,o=i===0?0:Math.round(r/i*100);return{done:r,total:i,pct:o}}function Nt(t){const e=Date.now();return h().timeBlocks.some(a=>a.taskId===t&&new Date(a.end).getTime()>e)}function Zt(){const t=st();return h().tasks.filter(e=>e.status!=="done"&&(e.dueDate===t||!!e.dueDate&&e.dueDate<t))}function ua(){return h().tasks.filter(t=>t.status!=="done"&&(t.priority==="P1"||t.priority==="P2"))}function va(){const t=st(),[e,a,r]=t.split("-").map(Number),i=new Date(e,a-1,r+7),o=`${i.getFullYear()}-${String(i.getMonth()+1).padStart(2,"0")}-${String(i.getDate()).padStart(2,"0")}`;return h().tasks.filter(n=>n.status!=="done"&&!!n.dueDate&&n.dueDate>=t&&n.dueDate<=o)}function be(){return h().tasks.filter(t=>t.status!=="done"&&!Nt(t.id))}function ma(){return h().tasks.filter(t=>t.status!=="done"&&Nt(t.id))}function ba(){const t=st();return h().tasks.filter(e=>e.status!=="done"&&!!e.dueDate&&e.dueDate<t&&!Nt(e.id))}function Z(){return h()}function ge(){const t=pe(),e=da(),a=ue(),r=ve(),i=[{key:"timeblock",label:s.sidebar.nav.timeblock,iconKey:"clock"},{key:"inbox",label:s.sidebar.nav.inbox,iconKey:"inbox",count:t,emphasis:t>0},{key:"upcoming",label:s.sidebar.nav.upcoming,iconKey:"calendar",count:e},{key:"allTasks",label:s.sidebar.nav.allTasks,iconKey:"list",count:a},{key:"completed",label:s.sidebar.nav.completed,iconKey:"check",count:r},{key:"insight",label:s.sidebar.nav.insight,iconKey:"chart"},{key:"planning",label:s.sidebar.nav.planning,iconKey:"cycle"}],o=Z().projects.slice(0,6);return`
+  `}function Ot(t){const[e,a,r]=t.split("-").map(Number);return new Date(e,a-1,r,0,0,0,0)}function me(t){const[e,a,r]=t.split("-").map(Number);return new Date(e,a-1,r,23,59,59,999)}function be(t,e,a){const r=new Date(t).getTime(),s=new Date(e).getTime(),o=Ot(a).getTime(),n=me(a).getTime();return r<n&&s>o}function ge(t,e){const a=new Date(t),r=Ot(e),s=a.getTime()-r.getTime(),o=Math.floor(s/6e4);return Math.max(0,Math.min(o,24*60))}function la(t,e,a){const r=ge(t,a),s=new Date(e),o=me(a),n=s.getTime()<o.getTime()?s:o,d=Math.floor((n.getTime()-Ot(a).getTime())/6e4);return Math.max(0,Math.min(d,24*60)-r)}function ca(t,e){const a=new Date(t),r=new Date(e);return a.getFullYear()!==r.getFullYear()||a.getMonth()!==r.getMonth()||a.getDate()!==r.getDate()}function pa(t,e,a){const r=te(t),s=te(e);return r===a&&s===a?"same_day":r===a?"cross_start":"cross_end"}function te(t){const e=new Date(t),a=e.getFullYear(),r=String(e.getMonth()+1).padStart(2,"0"),s=String(e.getDate()).padStart(2,"0");return`${a}-${r}-${s}`}function G(t){const e=new Date(t);return`${xt(e.getHours())}:${xt(e.getMinutes())}`}function Ct(){const t=new Date;return t.getHours()*60+t.getMinutes()}function at(t,e){const[a,r]=e.split(":").map(Number),[s,o,n]=t.split("-").map(Number);return new Date(s,o-1,n,a,r,0,0).toISOString()}function fe(t,e){const[a,r,s]=e.split("-").map(Number),[o,n,d]=t.split("-").map(Number),c=new Date(a,r-1,s).getTime(),p=new Date(o,n-1,d).getTime(),u=Math.round((p-c)/864e5);if(u===0)return"今天";if(u===1)return"明天";if(u===2)return"后天";if(u===-1)return"昨天";const g=new Date(o,n-1,d);return`${g.getMonth()+1}月${g.getDate()}日`}function xe(t){const[e,a,r]=t.split("-").map(Number),o=new Date(e,a-1,r).getDay(),n=o===0?5:(5-o+7)%7,d=new Date(e,a-1,r+(n===0?7:n));return`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`}function he(t){const[e,a,r]=t.split("-").map(Number),o=new Date(e,a-1,r).getDay(),n=o===0?1:(8-o)%7||7,d=new Date(e,a-1,r+n);return`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`}function tt(t,e){const[a,r,s]=t.split("-").map(Number),o=new Date(a,r-1,s+e);return`${o.getFullYear()}-${String(o.getMonth()+1).padStart(2,"0")}-${String(o.getDate()).padStart(2,"0")}`}function K(t){const e=Math.floor(t/60)%24,a=t%60;return`${xt(e)}:${xt(a)}`}function rt(t){const[e,a]=t.split(":").map(Number);return(e||0)*60+(a||0)}function ua(t){if(t<60)return`${t}分钟`;const e=Math.floor(t/60),a=t%60;return a===0?`${e}小时`:`${e}小时${a}分钟`}function ft(t,e=15){return Math.round(t/e)*e}function we(t,e){const a=new Date(t,e-1,1),r=new Date(t,e,0);let s=a.getDay();s=s===0?6:s-1;const o=[];for(let d=s-1;d>=0;d--){const c=new Date(t,e-1,-d);o.push({key:Pt(c),date:c.getDate(),isCurrentMonth:!1})}for(let d=1;d<=r.getDate();d++){const c=new Date(t,e-1,d);o.push({key:Pt(c),date:d,isCurrentMonth:!0})}let n=1;for(;o.length<42;){const d=new Date(t,e,n++);o.push({key:Pt(d),date:d.getDate(),isCurrentMonth:!1})}return o}function Pt(t){return`${t.getFullYear()}-${String(t.getMonth()+1).padStart(2,"0")}-${String(t.getDate()).padStart(2,"0")}`}function xt(t){return String(t).padStart(2,"0")}function ot(){return $()}function va(t){return t.status!=="done"&&t.projectId===null}function ma(){return h().tasks.filter(va)}function ye(){return ma().length}function ba(){const t=ot();return h().tasks.filter(e=>e.status!=="done"&&!!e.dueDate&&e.dueDate>=t)}function ga(){return ba().length}function Dt(){return h().tasks.filter(t=>t.status!=="done")}function ke(){return Dt().length}function fa(){return h().tasks.filter(t=>t.status==="done")}function $e(){return fa().length}function xa(t){return h().tasks.filter(e=>e.projectId===t&&e.status!=="done").length}function nt(t){return h().timeBlocks.filter(e=>be(e.start,e.end,t))}function ha(t){return h().timeBlocks.find(e=>e.status==="running"&&be(e.start,e.end,t))??null}function De(t){const e=t??ot(),a=nt(e),r=a.filter(n=>n.status==="done").length,s=a.length,o=s===0?0:Math.round(r/s*100);return{done:r,total:s,pct:o}}function Vt(t){const e=Date.now();return h().timeBlocks.some(a=>a.taskId===t&&new Date(a.end).getTime()>e)}function ee(){const t=ot();return h().tasks.filter(e=>e.status!=="done"&&(e.dueDate===t||!!e.dueDate&&e.dueDate<t))}function wa(){return h().tasks.filter(t=>t.status!=="done"&&(t.priority==="P1"||t.priority==="P2"))}function ya(){const t=ot(),[e,a,r]=t.split("-").map(Number),s=new Date(e,a-1,r+7),o=`${s.getFullYear()}-${String(s.getMonth()+1).padStart(2,"0")}-${String(s.getDate()).padStart(2,"0")}`;return h().tasks.filter(n=>n.status!=="done"&&!!n.dueDate&&n.dueDate>=t&&n.dueDate<=o)}function Te(){return h().tasks.filter(t=>t.status!=="done"&&!Vt(t.id))}function ka(){return h().tasks.filter(t=>t.status!=="done"&&Vt(t.id))}function $a(){const t=ot();return h().tasks.filter(e=>e.status!=="done"&&!!e.dueDate&&e.dueDate<t&&!Vt(e.id))}function J(){return h()}function Ie(){const t=ye(),e=ga(),a=ke(),r=$e(),s=[{key:"timeblock",label:i.sidebar.nav.timeblock,iconKey:"clock"},{key:"inbox",label:i.sidebar.nav.inbox,iconKey:"inbox",count:t,emphasis:t>0},{key:"upcoming",label:i.sidebar.nav.upcoming,iconKey:"calendar",count:e},{key:"allTasks",label:i.sidebar.nav.allTasks,iconKey:"list",count:a},{key:"completed",label:i.sidebar.nav.completed,iconKey:"check",count:r},{key:"insight",label:i.sidebar.nav.insight,iconKey:"chart"},{key:"planning",label:i.sidebar.nav.planning,iconKey:"cycle"}],o=J().projects.slice(0,6);return`
     <aside class="pms-sidebar" role="navigation">
       <div class="pms-sidebar-nav-group">
-        ${i.map(n=>ga(n,n.key==="timeblock")).join("")}
+        ${s.map(n=>Da(n,n.key==="timeblock")).join("")}
       </div>
 
       <div class="pms-sidebar-nav-group">
-        <div class="pms-sidebar-group-label">${s.sidebar.sectionLabel.project}</div>
+        <div class="pms-sidebar-group-label">${i.sidebar.sectionLabel.project}</div>
         ${o.map(n=>`
-          <div class="pms-project-list-item" data-project="${ft(n.id)}">
+          <div class="pms-project-list-item" data-project="${ht(n.id)}">
             <span class="pms-project-list-item-dot" style="background:var(${n.colorToken})"></span>
-            <span class="pms-project-list-item-name">${ft(n.name)}</span>
-            <span class="pms-project-list-item-count">${ca(n.id)}</span>
+            <span class="pms-project-list-item-name">${ht(n.name)}</span>
+            <span class="pms-project-list-item-count">${xa(n.id)}</span>
           </div>
         `).join("")}
-        ${Z().projects.length>6?`<div class="pms-sidebar-view-all">${s.sidebar.viewAll}（共 ${Z().projects.length} 个）</div>`:""}
+        ${J().projects.length>6?`<div class="pms-sidebar-view-all">${i.sidebar.viewAll}（共 ${J().projects.length} 个）</div>`:""}
       </div>
 
       <div class="pms-sidebar-kr-card">
-        <div class="pms-sidebar-kr-card-title">${s.sidebar.sectionLabel.kr}</div>
+        <div class="pms-sidebar-kr-card-title">${i.sidebar.sectionLabel.kr}</div>
         <div class="pms-sidebar-kr-card-body">
           本期重点：让 M1-New 骨架接入真实数据，跑通最小 CRUD。
         </div>
       </div>
     </aside>
-  `}function ga(t,e){const a=t.emphasis?"pms-sidebar-nav-item-count is-emphasis":"pms-sidebar-nav-item-count";return`
-    <div class="pms-sidebar-nav-item${e?" is-active":""}" data-nav="${ft(t.key)}">
-      <span class="pms-sidebar-nav-item-icon">${C[t.iconKey]}</span>
-      <span class="pms-sidebar-nav-item-label">${ft(t.label)}</span>
+  `}function Da(t,e){const a=t.emphasis?"pms-sidebar-nav-item-count is-emphasis":"pms-sidebar-nav-item-count";return`
+    <div class="pms-sidebar-nav-item${e?" is-active":""}" data-nav="${ht(t.key)}">
+      <span class="pms-sidebar-nav-item-icon">${L[t.iconKey]}</span>
+      <span class="pms-sidebar-nav-item-label">${ht(t.label)}</span>
       ${typeof t.count=="number"?`<span class="${a}">${t.count}</span>`:""}
     </div>
-  `}function ft(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}function fa(t,e={}){const a=q(),r={id:ie("task"),title:t.trim(),description:"",projectId:null,priority:"P3",status:"todo",createdAt:a,updatedAt:a,completedAt:null,scheduleStatus:"unscheduled",...e};return h().tasks.unshift(r),F(),r}function Y(t,e){const r=h().tasks.find(i=>i.id===t);return r?(Object.assign(r,e),r.updatedAt=q(),F(),r):null}function xa(t){const e=q();return Y(t,{status:"done",completedAt:e,scheduleStatus:"done"})}function ha(t){return Y(t,{status:"todo",completedAt:null})}function wa(t){const e=h(),a=e.tasks.findIndex(r=>r.id===t);return a===-1?!1:(e.tasks.splice(a,1),e.timeBlocks.forEach(r=>{r.taskId===t&&(r.taskId=null,r.source="manual",r.updatedAt=q())}),F(),!0)}function xt(t){const e=h(),a=e.tasks.find(n=>n.id===t);if(!a||a.status==="done")return;const r=Date.now(),i=e.timeBlocks.filter(n=>n.taskId===t&&new Date(n.end).getTime()>r);let o;if(!a.dueDate)o=i.length>0?"partial":"unscheduled";else{const n=$();a.dueDate<n?o=i.length>0?"partial":"overdue":o=i.length>0?"partial":"unscheduled"}a.scheduleStatus=o,a.updatedAt=q(),F()}function fe(t){return t?h().projects.find(e=>e.id===t)??null:null}function N(t){return h().tasks.find(e=>e.id===t)??null}const ya={P1:"紧急",P2:"高",P3:"中",P4:"低"};function ka(t){return ya[t]}function $a(t){return`is-${t.toLowerCase()}`}function qt(t){const e=q(),a=t.source??(t.taskId?"task":"manual"),r={id:ie("tb"),title:t.title.trim(),start:t.start,end:t.end,status:t.status??"planned",taskId:t.taskId??null,source:a,createdAt:e,updatedAt:e};return h().timeBlocks.push(r),F(),t.taskId&&xt(t.taskId),r}function Ft(t,e){const r=h().timeBlocks.find(o=>o.id===t);if(!r)return null;const i=r.taskId;return Object.assign(r,e),r.updatedAt=q(),F(),i&&xt(i),e.taskId&&e.taskId!==i&&xt(e.taskId),r}function Da(t){const e=h(),a=e.timeBlocks.findIndex(i=>i.id===t);if(a===-1)return!1;const r=e.timeBlocks[a].taskId;return e.timeBlocks.splice(a,1),F(),r&&xt(r),!0}function xe(t){return h().timeBlocks.find(e=>e.id===t)??null}function Gt(t,e){return Ft(t,{status:e})}function Ta(t,e){return Ft(t,{reviewNote:e})}const W=64;let X=$();function he(){return X}function Ia(){X=$()}function Sa(){X=tt(X,1)}function Pa(){X=tt(X,-1)}function we(){const t=X,e=$(),a=t===e,r=it(t),i=me(t),o=new Date(t+"T12:00:00"),n=["日","一","二","三","四","五","六"],d=`${o.getFullYear()}年${o.getMonth()+1}月${o.getDate()}日`,c=`周${n[o.getDay()]}`,p=r.length>0?s.timeline.blockCountTpl(r.length,i.done):s.timeline.noBlocksToday;return`
+  `}function ht(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}function Ta(t,e={}){const a=F(),r={id:ue("task"),title:t.trim(),description:"",projectId:null,priority:"P3",status:"todo",createdAt:a,updatedAt:a,completedAt:null,scheduleStatus:"unscheduled",...e};return h().tasks.unshift(r),R(),r}function U(t,e){const r=h().tasks.find(s=>s.id===t);return r?(Object.assign(r,e),r.updatedAt=F(),R(),r):null}function Ia(t){const e=F();return U(t,{status:"done",completedAt:e,scheduleStatus:"done"})}function Sa(t){return U(t,{status:"todo",completedAt:null})}function Pa(t){const e=h(),a=e.tasks.findIndex(r=>r.id===t);return a===-1?!1:(e.tasks.splice(a,1),e.timeBlocks.forEach(r=>{r.taskId===t&&(r.taskId=null,r.source="manual",r.updatedAt=F())}),R(),!0)}function wt(t){const e=h(),a=e.tasks.find(n=>n.id===t);if(!a||a.status==="done")return;const r=Date.now(),s=e.timeBlocks.filter(n=>n.taskId===t&&new Date(n.end).getTime()>r);let o;if(!a.dueDate)o=s.length>0?"partial":"unscheduled";else{const n=$();a.dueDate<n?o=s.length>0?"partial":"overdue":o=s.length>0?"partial":"unscheduled"}a.scheduleStatus=o,a.updatedAt=F(),R()}function Se(t){return t?h().projects.find(e=>e.id===t)??null:null}function q(t){return h().tasks.find(e=>e.id===t)??null}const Ma={P1:"紧急",P2:"高",P3:"中",P4:"低"};function za(t){return Ma[t]}function Ea(t){return`is-${t.toLowerCase()}`}function Yt(t){const e=F(),a=t.source??(t.taskId?"task":"manual"),r={id:ue("tb"),title:t.title.trim(),start:t.start,end:t.end,status:t.status??"planned",taskId:t.taskId??null,source:a,createdAt:e,updatedAt:e};return h().timeBlocks.push(r),R(),t.taskId&&wt(t.taskId),r}function Kt(t,e){const r=h().timeBlocks.find(o=>o.id===t);if(!r)return null;const s=r.taskId;return Object.assign(r,e),r.updatedAt=F(),R(),s&&wt(s),e.taskId&&e.taskId!==s&&wt(e.taskId),r}function Aa(t){const e=h(),a=e.timeBlocks.findIndex(s=>s.id===t);if(a===-1)return!1;const r=e.timeBlocks[a].taskId;return e.timeBlocks.splice(a,1),R(),r&&wt(r),!0}function Pe(t){return h().timeBlocks.find(e=>e.id===t)??null}function ae(t,e){return Kt(t,{status:e})}function ja(t,e){return Kt(t,{reviewNote:e})}const Z=64;let W=$();function Wt(){return W}function Ba(t){W=t}function Ca(){W=$()}function La(){W=tt(W,1)}function Ha(){W=tt(W,-1)}function Me(){const t=W,e=$(),a=t===e,r=nt(t),s=De(t),o=new Date(t+"T12:00:00"),n=["日","一","二","三","四","五","六"],d=`${o.getFullYear()}年${o.getMonth()+1}月${o.getDate()}日`,c=`周${n[o.getDay()]}`,p=r.length>0?i.timeline.blockCountTpl(r.length,s.done):i.timeline.noBlocksToday;return`
 <div class="tl-container">
   <!-- Header -->
   <div class="tl-header">
     <div class="tl-header-row1">
       <div class="tl-date-nav">
-        <button class="tl-nav-btn" data-act="tl-prev-day" title="${x(s.timeline.prevDay)}" type="button">&#8249;</button>
-        <button class="tl-today-btn" data-act="tl-today" type="button">${x(s.timeline.today)}</button>
-        <button class="tl-nav-btn" data-act="tl-next-day" title="${x(s.timeline.nextDay)}" type="button">&#8250;</button>
+        <button class="tl-nav-btn" data-act="tl-prev-day" title="${x(i.timeline.prevDay)}" type="button">&#8249;</button>
+        <button class="tl-today-btn" data-act="tl-today" type="button">${x(i.timeline.today)}</button>
+        <button class="tl-nav-btn" data-act="tl-next-day" title="${x(i.timeline.nextDay)}" type="button">&#8250;</button>
       </div>
       <div class="tl-date-label"
            data-act="tl-open-date-picker"
@@ -1997,12 +2018,12 @@
       ${a?'<div class="tl-today-badge">今天</div>':""}
       <div style="flex:1"></div>
       <div class="tl-view-toggle">
-        <button class="tl-view-btn is-active" type="button">${x(s.timeline.dayView)}</button>
-        <button class="tl-view-btn is-disabled" type="button" title="${x(s.timeline.comingSoon)}">
-          ${x(s.timeline.weekView)}
+        <button class="tl-view-btn is-active" type="button">${x(i.timeline.dayView)}</button>
+        <button class="tl-view-btn is-disabled" type="button" title="${x(i.timeline.comingSoon)}">
+          ${x(i.timeline.weekView)}
         </button>
-        <button class="tl-view-btn is-disabled" type="button" title="${x(s.timeline.comingSoon)}">
-          ${x(s.timeline.monthView)}
+        <button class="tl-view-btn is-disabled" type="button" title="${x(i.timeline.comingSoon)}">
+          ${x(i.timeline.monthView)}
         </button>
       </div>
       <button class="tl-arrange-btn" data-act="open-ai-schedule" type="button">
@@ -2010,7 +2031,7 @@
           <path d="M5 1L6.2 3.9H9.5L6.8 5.9 7.7 9 5 7.2 2.3 9 3.2 5.9.5 3.9H3.8L5 1Z"
                 fill="rgba(255,255,255,.85)"/>
         </svg>
-        ${x(s.timeline.arrangeBtn)}
+        ${x(i.timeline.arrangeBtn)}
       </button>
     </div>
     <div class="tl-header-row2">${x(p)}</div>
@@ -2018,147 +2039,147 @@
 
   <!-- Timeline body -->
   <div class="tl-scroll-wrap" id="pms-tl-scroll">
-    ${Ma(r,t,a)}
+    ${_a(r,t,a)}
     <button class="tl-add-btn" data-act="add-timeblock" type="button">
-      + ${x(s.timeline.addBtn)}
+      + ${x(i.timeline.addBtn)}
     </button>
   </div>
-</div>`}function Ma(t,e,a){const r=Array.from({length:25},(p,u)=>`
-      <div class="tl-hour-row" style="top:${u*W}px">
-        <div class="tl-hour-label">${Et(u)}:00</div>
-        ${u<24?`<div class="tl-half-line" style="top:${W/2}px"></div>`:""}
-      </div>`).join(""),i=a?zt()/60*W:-1,o=a?`<div class="tl-now-line" id="pms-now-line" style="top:${i.toFixed(1)}px">
+</div>`}function _a(t,e,a){const r=Array.from({length:25},(p,u)=>`
+      <div class="tl-hour-row" style="top:${u*Z}px">
+        <div class="tl-hour-label">${Lt(u)}:00</div>
+        ${u<24?`<div class="tl-half-line" style="top:${Z/2}px"></div>`:""}
+      </div>`).join(""),s=a?Ct()/60*Z:-1,o=a?`<div class="tl-now-line" id="pms-now-line" style="top:${s.toFixed(1)}px">
          <div class="tl-now-dot"></div>
-         <div class="tl-now-label">${Ca(zt())}</div>
-       </div>`:"",d=Aa(t,e).map(({block:p,top:u,height:g,col:f,totalCols:k})=>Ea(p,u,g,f,k,e)).join("");return`
-<div class="tl-inner" style="height:${24*W}px" id="pms-tl-inner">
+         <div class="tl-now-label">${Va(Ct())}</div>
+       </div>`:"",d=Fa(t,e).map(({block:p,top:u,height:g,col:f,totalCols:k})=>qa(p,u,g,f,k,e)).join("");return`
+<div class="tl-inner" style="height:${24*Z}px" id="pms-tl-inner">
   <div class="tl-hours">${r}</div>
   <div class="tl-col">
     ${o}
     ${d}
-    ${t.length===0?za():""}
+    ${t.length===0?Na():""}
   </div>
-</div>`}function za(){return`
+</div>`}function Na(){return`
 <div class="tl-empty">
-  <div class="tl-empty-title">${x(s.timeline.emptyTitle)}</div>
-  <div class="tl-empty-hint">${x(s.timeline.emptyHint)}</div>
-</div>`}function Ea(t,e,a,r,i,o){const n=ta(t.start,t.end,o),d=t.status==="running",c=t.status==="done",p=d?" tbl-running":c?" tbl-done":" tbl-planned",u=n==="cross_start"?" tbl-cd-start":n==="cross_end"?" tbl-cd-end":"",g=ja(t),f=Ba(t),k=c?`<button class="tbl-action-btn tbl-action-review" data-act="tl-card-review" type="button">${x(s.block.actionReview)}</button>`:d?`<button class="tbl-action-btn tbl-action-done" data-act="tl-card-done" type="button">${x(s.block.actionDone)}</button>`:`<button class="tbl-action-btn tbl-action-start" data-act="tl-card-start" type="button">${x(s.block.actionStart)}</button>`,j=i>1?r/i*100:0,z=i>1?100/i-.5:100,E=n==="cross_start"?`<div class="tbl-cd-badge">${x(s.timeline.crossDayContinues)} ${x(U(t.end))}</div>`:n==="cross_end"?`<div class="tbl-cd-badge">${x(s.timeline.crossDayFrom)}</div>`:"",R=a<32;return`
+  <div class="tl-empty-title">${x(i.timeline.emptyTitle)}</div>
+  <div class="tl-empty-hint">${x(i.timeline.emptyHint)}</div>
+</div>`}function qa(t,e,a,r,s,o){const n=pa(t.start,t.end,o),d=t.status==="running",c=t.status==="done",p=d?" tbl-running":c?" tbl-done":" tbl-planned",u=n==="cross_start"?" tbl-cd-start":n==="cross_end"?" tbl-cd-end":"",g=Ra(t),f=Oa(t),k=c?`<button class="tbl-action-btn tbl-action-review" data-act="tl-card-review" type="button">${x(i.block.actionReview)}</button>`:d?`<button class="tbl-action-btn tbl-action-done" data-act="tl-card-done" type="button">${x(i.block.actionDone)}</button>`:`<button class="tbl-action-btn tbl-action-start" data-act="tl-card-start" type="button">${x(i.block.actionStart)}</button>`,B=s>1?r/s*100:0,E=s>1?100/s-.5:100,j=n==="cross_start"?`<div class="tbl-cd-badge">${x(i.timeline.crossDayContinues)} ${x(G(t.end))}</div>`:n==="cross_end"?`<div class="tbl-cd-badge">${x(i.timeline.crossDayFrom)}</div>`:"",O=a<32;return`
 <div class="tbl-block${p}${u}"
-     style="top:${e.toFixed(1)}px;height:${a.toFixed(1)}px;left:${j.toFixed(1)}%;width:${z.toFixed(1)}%;"
+     style="top:${e.toFixed(1)}px;height:${a.toFixed(1)}px;left:${B.toFixed(1)}%;width:${E.toFixed(1)}%;"
      data-block-id="${x(t.id)}"
      title="${x(g)}">
   <div class="tbl-strip"></div>
   <div class="tbl-body">
-    ${d?`<div class="tbl-running-badge">${x(s.block.statusRunningBadge)}</div>`:""}
-    ${R?`<div class="tbl-title tbl-single">${x(g)}</div>`:`<div class="tbl-title">${x(g)}</div>
-         <div class="tbl-time">${x(U(t.start))} — ${x(U(t.end))}</div>
+    ${d?`<div class="tbl-running-badge">${x(i.block.statusRunningBadge)}</div>`:""}
+    ${O?`<div class="tbl-title tbl-single">${x(g)}</div>`:`<div class="tbl-title">${x(g)}</div>
+         <div class="tbl-time">${x(G(t.start))} — ${x(G(t.end))}</div>
          ${f&&a>=64?`<div class="tbl-source">${x(f)}</div>`:""}
-         ${E}`}
+         ${j}`}
     ${k}
   </div>
-</div>`}function Aa(t,e){const a=[...t].sort((o,n)=>new Date(o.start).getTime()-new Date(n.start).getTime()),r=[],i=[];for(const o of a){const n=le(o.start,e)/60*W,d=Xe(o.start,o.end,e),c=Math.max(16,d/60*W),p=n+c,u=new Set(i.filter(k=>k.end>n&&k.start<p).map(k=>k.col));let g=0;for(;u.has(g);)g++;i.push({start:n,end:p,col:g});const f=g+1;r.push({block:o,top:n,height:c,col:g,totalCols:f})}for(let o=0;o<r.length;o++){const n=r[o];for(let d=0;d<r.length;d++){const c=r[d];if(n.top<c.top+c.height&&n.top+n.height>c.top){const u=Math.max(n.totalCols,c.totalCols);r[o].totalCols=u,r[d].totalCols=u}}}return r}function ja(t){if((t.source==="task"||!t.source)&&t.taskId){const e=N(t.taskId);if(e)return e.title}return t.title||"（无标题）"}function Ba(t){return t.source==="task"&&t.taskId?s.block.sourcePrefixTask:t.source==="periodic"?s.block.sourcePrefixPeriodic:t.source==="ai_draft"?s.block.sourcePrefixAiDraft:""}function Ca(t){return`${Et(Math.floor(t/60)%24)}:${Et(t%60)}`}function Et(t){return String(t).padStart(2,"0")}function x(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}let Rt="today",At=!1;function La(t){Rt=t}function Ha(){At=!At}function ye(){if(At)return _a();const t=qa(),e=be().length,a=Object.keys(s.pool.filters).map(r=>`
-    <button class="atp-filter${Rt===r?" is-active":""}"
+</div>`}function Fa(t,e){const a=[...t].sort((o,n)=>new Date(o.start).getTime()-new Date(n.start).getTime()),r=[],s=[];for(const o of a){const n=ge(o.start,e)/60*Z,d=la(o.start,o.end,e),c=Math.max(16,d/60*Z),p=n+c,u=new Set(s.filter(k=>k.end>n&&k.start<p).map(k=>k.col));let g=0;for(;u.has(g);)g++;s.push({start:n,end:p,col:g});const f=g+1;r.push({block:o,top:n,height:c,col:g,totalCols:f})}for(let o=0;o<r.length;o++){const n=r[o];for(let d=0;d<r.length;d++){const c=r[d];if(n.top<c.top+c.height&&n.top+n.height>c.top){const u=Math.max(n.totalCols,c.totalCols);r[o].totalCols=u,r[d].totalCols=u}}}return r}function Ra(t){if((t.source==="task"||!t.source)&&t.taskId){const e=q(t.taskId);if(e)return e.title}return t.title||"（无标题）"}function Oa(t){return t.source==="task"&&t.taskId?i.block.sourcePrefixTask:t.source==="periodic"?i.block.sourcePrefixPeriodic:t.source==="ai_draft"?i.block.sourcePrefixAiDraft:""}function Va(t){return`${Lt(Math.floor(t/60)%24)}:${Lt(t%60)}`}function Lt(t){return String(t).padStart(2,"0")}function x(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}let Ut="today",Ht=!1;function Ya(t){Ut=t}function Ka(){Ht=!Ht}function ze(){if(Ht)return Wa();const t=Za(),e=Te().length,a=Object.keys(i.pool.filters).map(r=>`
+    <button class="atp-filter${Ut===r?" is-active":""}"
       data-act="pool-filter" data-value="${r}" type="button">
-      ${T(s.pool.filters[r])}
+      ${I(i.pool.filters[r])}
     </button>`).join("");return`
 <div class="pms-taskpool" id="pms-taskpool">
   <div class="atp-header">
     <div class="atp-title-row">
-      <div class="atp-title">${T(s.pool.title)}</div>
+      <div class="atp-title">${I(i.pool.title)}</div>
       <div class="atp-count">· 未安排 ${e}</div>
-      <button class="atp-collapse" data-act="pool-collapse" type="button">&#8249; ${T(s.pool.collapse)}</button>
+      <button class="atp-collapse" data-act="pool-collapse" type="button">&#8249; ${I(i.pool.collapse)}</button>
     </div>
     <div class="atp-filters">${a}</div>
   </div>
   <div class="atp-list" id="pms-pool-list">
-    ${t.length===0?`<div class="atp-empty">${T(s.pool.noTasks)}<br><span class="atp-empty-hint">${T(s.pool.noTasksHint)}</span></div>`:t.map(Na).join("")}
+    ${t.length===0?`<div class="atp-empty">${I(i.pool.noTasks)}<br><span class="atp-empty-hint">${I(i.pool.noTasksHint)}</span></div>`:t.map(Ua).join("")}
   </div>
-</div>`}function _a(){return`
+</div>`}function Wa(){return`
 <div class="pms-taskpool pms-taskpool-collapsed" id="pms-taskpool">
   <button class="atp-expand-btn" data-act="pool-collapse" type="button"
-    title="${T(s.pool.expand)}">
+    title="${I(i.pool.expand)}">
     <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
       <path d="M4 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
     </svg>
   </button>
-</div>`}function Na(t){const e=fe(t.projectId),a=e?e.name:s.sidebar.nav.inbox,r=Fa(t.priority),i=Ra(t),o=Oa(t),n=t.dueDate&&t.dueDate<$(),d=t.scheduleStatus==="partial"||t.scheduleStatus==="scheduled";let c="",p="";if(t.dueDate){const g=$();t.dueDate<g?(c=`逾期 ${Jt(t.dueDate,g)}`,p="tp-due-late"):t.dueDate===g?(c="截止今日",p="tp-due-near"):c=`截止 ${Jt(t.dueDate,g)}`}const u=t.aiEstimatedMinutes?`AI 预估 ${Va(t.aiEstimatedMinutes)}`:"";return`
+</div>`}function Ua(t){const e=Se(t.projectId),a=e?e.name:i.sidebar.nav.inbox,r=Ga(t.priority),s=Ja(t),o=Xa(t),n=t.dueDate&&t.dueDate<$(),d=t.scheduleStatus==="partial"||t.scheduleStatus==="scheduled";let c="",p="";if(t.dueDate){const g=$();t.dueDate<g?(c=`逾期 ${re(t.dueDate,g)}`,p="tp-due-late"):t.dueDate===g?(c="截止今日",p="tp-due-near"):c=`截止 ${re(t.dueDate,g)}`}const u=t.aiEstimatedMinutes?`AI 预估 ${Qa(t.aiEstimatedMinutes)}`:"";return`
 <div class="tp-row${n?" tp-row-overdue":""}"
-     data-task-id="${T(t.id)}"
+     data-task-id="${I(t.id)}"
      draggable="true"
-     title="${T(t.title)}">
+     title="${I(t.title)}">
   <div class="tp-row-line1">
     <div class="tp-pri" style="background:${r}"></div>
-    <div class="tp-title">${T(t.title)}</div>
-    <div class="tp-status ${o}">${T(i)}</div>
+    <div class="tp-title">${I(t.title)}</div>
+    <div class="tp-status ${o}">${I(s)}</div>
     <button class="tp-arrange"
       data-act="${d?"pool-rearrange":"pool-arrange"}"
-      data-task-id="${T(t.id)}"
+      data-task-id="${I(t.id)}"
       type="button">
-      ${T(d?s.pool.rearrange:s.pool.arrange)}
+      ${I(d?i.pool.rearrange:i.pool.arrange)}
     </button>
   </div>
   <div class="tp-row-line2">
-    ${e?`<span class="tp-proj" style="color:var(${e.colorToken})">${T(a)}</span>`:`<span class="tp-proj">${T(a)}</span>`}
-    ${c?`<span>·</span><span class="tp-due ${p}">${T(c)}</span>`:""}
+    ${e?`<span class="tp-proj" style="color:var(${e.colorToken})">${I(a)}</span>`:`<span class="tp-proj">${I(a)}</span>`}
+    ${c?`<span>·</span><span class="tp-due ${p}">${I(c)}</span>`:""}
     ${u?`<span>·</span><span class="tp-ai-est">
       <svg width="9" height="9" viewBox="0 0 10 10" fill="none" class="tp-ai-icon">
         <path d="M5 1L6.2 3.9H9.5L6.8 5.9 7.7 9 5 7.2 2.3 9 3.2 5.9.5 3.9H3.8L5 1Z"
               fill="var(--accent)" opacity=".6"/>
       </svg>
-      ${T(u)}</span>`:""}
+      ${I(u)}</span>`:""}
   </div>
-</div>`}function ke(t){t.addEventListener("dragstart",e=>{var r;const a=e.target.closest("[data-task-id]");if(!(a!=null&&a.dataset.taskId)){e.preventDefault();return}(r=e.dataTransfer)==null||r.setData("text/plain",a.dataset.taskId),a.classList.add("tp-dragging")}),t.addEventListener("dragend",e=>{const a=e.target.closest("[data-task-id]");a==null||a.classList.remove("tp-dragging"),document.querySelectorAll(".tl-drop-indicator").forEach(r=>r.remove())})}function qa(){switch(Rt){case"today":return Zt();case"highPri":return ua();case"upcoming":return va();case"unscheduled":return be();case"partial":return ma();case"overdue":return ba();default:return Zt()}}function Fa(t){return{P1:"var(--danger)",P2:"var(--warning)",P3:"var(--text-4)",P4:"var(--text-4)"}[t]}function Ra(t){const e=s.pool.statusLabel;switch(t.scheduleStatus){case"partial":return e.partial;case"scheduled":return e.scheduled;case"done":return e.done;case"overdue":return e.overdue;default:return e.unscheduled}}function Oa(t){switch(t.scheduleStatus){case"partial":return"tp-status-partial";case"scheduled":return"tp-status-scheduled";case"done":return"tp-status-done";case"overdue":return"tp-status-overdue";default:return"tp-status-unscheduled"}}function Jt(t,e){const[a,r,i]=e.split("-").map(Number),[o,n,d]=t.split("-").map(Number),c=new Date(o,n-1,d).getTime()-new Date(a,r-1,i).getTime(),p=Math.round(c/864e5);return p===0?"今日":p===-1?"昨日":p===1?"明日":`${n}月${d}日`}function Va(t){if(t<60)return`${t}分`;const e=Math.floor(t/60),a=t%60;return a===0?`${e}h`:`${e}h${a}分`}function T(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}function $e(){const t=he();return`
+</div>`}function Ee(t){t.addEventListener("dragstart",e=>{var r;const a=e.target.closest("[data-task-id]");if(!(a!=null&&a.dataset.taskId)){e.preventDefault();return}(r=e.dataTransfer)==null||r.setData("text/plain",a.dataset.taskId),a.classList.add("tp-dragging")}),t.addEventListener("dragend",e=>{const a=e.target.closest("[data-task-id]");a==null||a.classList.remove("tp-dragging"),document.querySelectorAll(".tl-drop-indicator").forEach(r=>r.remove())})}function Za(){switch(Ut){case"today":return ee();case"highPri":return wa();case"upcoming":return ya();case"unscheduled":return Te();case"partial":return ka();case"overdue":return $a();default:return ee()}}function Ga(t){return{P1:"var(--danger)",P2:"var(--warning)",P3:"var(--text-4)",P4:"var(--text-4)"}[t]}function Ja(t){const e=i.pool.statusLabel;switch(t.scheduleStatus){case"partial":return e.partial;case"scheduled":return e.scheduled;case"done":return e.done;case"overdue":return e.overdue;default:return e.unscheduled}}function Xa(t){switch(t.scheduleStatus){case"partial":return"tp-status-partial";case"scheduled":return"tp-status-scheduled";case"done":return"tp-status-done";case"overdue":return"tp-status-overdue";default:return"tp-status-unscheduled"}}function re(t,e){const[a,r,s]=e.split("-").map(Number),[o,n,d]=t.split("-").map(Number),c=new Date(o,n-1,d).getTime()-new Date(a,r-1,s).getTime(),p=Math.round(c/864e5);return p===0?"今日":p===-1?"昨日":p===1?"明日":`${n}月${d}日`}function Qa(t){if(t<60)return`${t}分`;const e=Math.floor(t/60),a=t%60;return a===0?`${e}h`:`${e}h${a}分`}function I(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}function Ae(){const t=Wt();return`
 <aside class="pms-right-sidebar" role="complementary">
-  ${Ka()}
-  ${Ya(t)}
-  ${Wa(t)}
-  ${Ua()}
-  ${Za()}
-</aside>`}function Ka(){return`
+  ${tr()}
+  ${er(t)}
+  ${ar(t)}
+  ${rr()}
+  ${ir()}
+</aside>`}function tr(){return`
 <div class="rps">
-  <div class="rps-title">${M(s.right.sectionCapture)}</div>
+  <div class="rps-title">${z(i.right.sectionCapture)}</div>
   <div class="qc-wrap">
     <span class="qc-plus">+</span>
     <input type="text" id="pms-quick-capture"
       class="qc-input"
-      placeholder="${M(s.right.capturePlaceholder)}"
+      placeholder="${z(i.right.capturePlaceholder)}"
       autocomplete="off" />
     <span class="qc-kbd">&#8984;K</span>
   </div>
-</div>`}function Ya(t){const e=pa(t);if(!e)return`<div class="rps">
-      <div class="rps-title">${M(s.right.sectionRunning)}</div>
-      <div class="rps-empty">${M(s.right.none)}</div>
-    </div>`;const a=e.taskId?N(e.taskId):null,r=a?a.title:e.title,i=Ga(e.start);return`
+</div>`}function er(t){const e=ha(t);if(!e)return`<div class="rps">
+      <div class="rps-title">${z(i.right.sectionRunning)}</div>
+      <div class="rps-empty">${z(i.right.none)}</div>
+    </div>`;const a=e.taskId?q(e.taskId):null,r=a?a.title:e.title,s=sr(e.start);return`
 <div class="rps">
-  <div class="rps-title">${M(s.right.sectionRunning)}</div>
+  <div class="rps-title">${z(i.right.sectionRunning)}</div>
   <div class="inprog-card">
     <div class="inprog-lbl">进行中</div>
-    <div class="inprog-title">${M(r)}</div>
-    <div class="inprog-time">${M(U(e.start))} — ${M(U(e.end))} · ${M(i)}</div>
+    <div class="inprog-title">${z(r)}</div>
+    <div class="inprog-time">${z(G(e.start))} — ${z(G(e.end))} · ${z(s)}</div>
   </div>
-</div>`}function Wa(t){const e=$(),a=t===e,r=me(t),i=2*Math.PI*22,o=i*(r.pct/100),n=r.total===0?"今日暂无时间块":`已完成 ${r.done} / ${r.total} 个时间块`;return`
+</div>`}function ar(t){const e=$(),a=t===e,r=De(t),s=2*Math.PI*22,o=s*(r.pct/100),n=r.total===0?"今日暂无时间块":`已完成 ${r.done} / ${r.total} 个时间块`;return`
 <div class="rps">
-  <div class="rps-title">${M(a?s.right.sectionProgress:"本日进度")}</div>
+  <div class="rps-title">${z(a?i.right.sectionProgress:"本日进度")}</div>
   <div class="pms-today-progress">
     <svg class="pms-today-progress-ring" viewBox="0 0 56 56">
       <circle cx="28" cy="28" r="22" fill="none" stroke="var(--bg-2)" stroke-width="5"/>
       <circle cx="28" cy="28" r="22" fill="none"
               stroke="var(--accent)" stroke-width="5"
-              stroke-dasharray="${o.toFixed(1)} ${i.toFixed(1)}"
+              stroke-dasharray="${o.toFixed(1)} ${s.toFixed(1)}"
               transform="rotate(-90 28 28)" stroke-linecap="round"/>
     </svg>
     <div class="pms-today-progress-text">
       <div class="pms-progress-ratio pms-numeric">${r.done} / ${r.total}</div>
-      <div class="pms-progress-label">${M(n)}</div>
+      <div class="pms-progress-label">${z(n)}</div>
     </div>
   </div>
-</div>`}function Ua(){return`
+</div>`}function rr(){return`
 <div class="rps">
-  <div class="rps-title">${M(s.right.sectionPeriodic)}</div>
+  <div class="rps-title">${z(i.right.sectionPeriodic)}</div>
   <div class="rps-empty" style="font-size:11px;color:var(--text-4)">周期事项 M1-New.3A 上线</div>
-</div>`}function Za(){return`
+</div>`}function ir(){return`
 <div class="rps">
-  <div class="rps-title">${M(s.right.sectionAi)}</div>
+  <div class="rps-title">${z(i.right.sectionAi)}</div>
   <div class="ai-slot">
     <div class="ai-slot-icon">
       <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -2167,139 +2188,139 @@
       </svg>
     </div>
     <div class="ai-slot-title">秘书式 AI 建议</div>
-    <div class="ai-slot-sub">${M(s.right.aiNotConfigured)}</div>
-    <div class="ai-slot-btn" data-act="open-ai-schedule">${M(s.right.aiConfigBtn)}</div>
+    <div class="ai-slot-sub">${z(i.right.aiNotConfigured)}</div>
+    <div class="ai-slot-btn" data-act="open-ai-schedule">${z(i.right.aiConfigBtn)}</div>
   </div>
-</div>`}function Ga(t){const e=Math.max(0,Math.floor((Date.now()-new Date(t).getTime())/6e4));return e<60?`已用 ${e} 分钟`:`已用 ${Math.floor(e/60)} 小时 ${e%60} 分钟`}function M(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}const Ja={id:"ai-placeholder",advice:"将当前任务拆成 3 个子任务",reason:"当前任务预计超过 90 分钟，连续作业易疲劳"};function De(t=Ja){return`
-    <div class="pms-ai-suggestion-card" data-ai-id="${Tt(t.id)}">
+</div>`}function sr(t){const e=Math.max(0,Math.floor((Date.now()-new Date(t).getTime())/6e4));return e<60?`已用 ${e} 分钟`:`已用 ${Math.floor(e/60)} 小时 ${e%60} 分钟`}function z(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}const or={id:"ai-placeholder",advice:"将当前任务拆成 3 个子任务",reason:"当前任务预计超过 90 分钟，连续作业易疲劳"};function je(t=or){return`
+    <div class="pms-ai-suggestion-card" data-ai-id="${Mt(t.id)}">
       <div class="pms-ai-suggestion-card-row">
-        <span class="pms-ai-suggestion-card-label">${s.ai.label}</span>
-        <span class="pms-ai-suggestion-card-value">${Tt(t.advice)}</span>
+        <span class="pms-ai-suggestion-card-label">${i.ai.label}</span>
+        <span class="pms-ai-suggestion-card-value">${Mt(t.advice)}</span>
       </div>
       <div class="pms-ai-suggestion-card-row">
-        <span class="pms-ai-suggestion-card-label">${s.ai.reason}</span>
-        <span class="pms-ai-suggestion-card-value">${Tt(t.reason)}</span>
+        <span class="pms-ai-suggestion-card-label">${i.ai.reason}</span>
+        <span class="pms-ai-suggestion-card-value">${Mt(t.reason)}</span>
       </div>
       <div class="pms-ai-suggestion-card-row">
-        <span class="pms-ai-suggestion-card-label">${s.ai.action}</span>
+        <span class="pms-ai-suggestion-card-label">${i.ai.action}</span>
         <div class="pms-ai-suggestion-card-actions">
-          <button class="pms-primary-button" data-ai-act="accept" type="button">${s.ai.accept}</button>
-          <button class="pms-secondary-button" data-ai-act="ignore" type="button">${s.ai.ignore}</button>
-          <button class="pms-text-button" data-ai-act="edit" type="button">${s.ai.editAndAccept}</button>
+          <button class="pms-primary-button" data-ai-act="accept" type="button">${i.ai.accept}</button>
+          <button class="pms-secondary-button" data-ai-act="ignore" type="button">${i.ai.ignore}</button>
+          <button class="pms-text-button" data-ai-act="edit" type="button">${i.ai.editAndAccept}</button>
         </div>
       </div>
     </div>
-  `}function Tt(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}let w=null,_=!1,y=null;function Xa(t){y=t}function Qa(){return`
+  `}function Mt(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}let w=null,N=!1,y=null;function nr(t){y=t}function dr(){return`
     <div class="pms-scrim" data-act="close-drawer" aria-hidden="true"></div>
-    <aside class="pms-task-detail-drawer" id="pms-task-detail-drawer" role="dialog" aria-modal="false" aria-label="${s.drawer.title}">
+    <aside class="pms-task-detail-drawer" id="pms-task-detail-drawer" role="dialog" aria-modal="false" aria-label="${i.drawer.title}">
       <div class="pms-task-detail-drawer-header">
-        <div class="pms-task-detail-drawer-title" id="pms-drawer-title">${s.drawer.title}</div>
-        <button class="pms-icon-button" data-act="close-drawer" type="button" title="${s.drawer.close}">
-          ${C.close}
+        <div class="pms-task-detail-drawer-title" id="pms-drawer-title">${i.drawer.title}</div>
+        <button class="pms-icon-button" data-act="close-drawer" type="button" title="${i.drawer.close}">
+          ${L.close}
         </button>
       </div>
       <div class="pms-task-detail-drawer-body" id="pms-drawer-body">
         <div class="pms-empty-state">
-          <div class="pms-empty-state-title">${s.drawer.empty}</div>
+          <div class="pms-empty-state-title">${i.drawer.empty}</div>
         </div>
       </div>
       <div class="pms-task-detail-drawer-footer" id="pms-drawer-footer" style="display:none">
         <button class="pms-text-button" data-act="drawer-toggle-done" type="button" id="pms-drawer-toggle-done"></button>
         <div class="pms-drawer-footer-spacer"></div>
-        <button class="pms-danger-button is-secondary" data-act="drawer-delete" type="button" id="pms-drawer-delete">${s.buttons.danger}</button>
-        <button class="pms-secondary-button" data-act="close-drawer" type="button">${s.drawer.close}</button>
-        <button class="pms-primary-button" data-act="drawer-save" type="button">${s.drawer.saved}</button>
+        <button class="pms-danger-button is-secondary" data-act="drawer-delete" type="button" id="pms-drawer-delete">${i.buttons.danger}</button>
+        <button class="pms-secondary-button" data-act="close-drawer" type="button">${i.drawer.close}</button>
+        <button class="pms-primary-button" data-act="drawer-save" type="button">${i.drawer.saved}</button>
       </div>
     </aside>
-  `}function Te(t){var o;const e=N(t);if(!e)return;w=t,_=!1;const a=document.getElementById("pms-drawer-title"),r=document.getElementById("pms-drawer-body"),i=document.getElementById("pms-drawer-footer");!a||!r||!i||(a.textContent=e.title||s.drawer.title,r.innerHTML=er(e),i.style.display="flex",pt(e),(o=document.querySelector(".pms-app-m1"))==null||o.classList.add("is-detail-open"),ar(),tr())}let Xt=!1;function tr(){Xt||(Xt=!0,rr())}function ht(){var e;(e=document.querySelector(".pms-app-m1"))==null||e.classList.remove("is-detail-open"),w=null,_=!1;const t=document.getElementById("pms-drawer-footer");t&&(t.style.display="none")}function er(t){const e=fe(t.projectId),a=Z().projects,r=t.status==="done"?s.status.done:s.status.notStarted;return`
+  `}function Be(t){var o;const e=q(t);if(!e)return;w=t,N=!1;const a=document.getElementById("pms-drawer-title"),r=document.getElementById("pms-drawer-body"),s=document.getElementById("pms-drawer-footer");!a||!r||!s||(a.textContent=e.title||i.drawer.title,r.innerHTML=cr(e),s.style.display="flex",vt(e),(o=document.querySelector(".pms-app-m1"))==null||o.classList.add("is-detail-open"),pr(),lr())}let ie=!1;function lr(){ie||(ie=!0,ur())}function yt(){var e;(e=document.querySelector(".pms-app-m1"))==null||e.classList.remove("is-detail-open"),w=null,N=!1;const t=document.getElementById("pms-drawer-footer");t&&(t.style.display="none")}function cr(t){const e=Se(t.projectId),a=J().projects,r=t.status==="done"?i.status.done:i.status.notStarted;return`
     <div class="pms-task-detail-field">
-      <div class="pms-task-detail-field-label">${s.drawer.title}</div>
+      <div class="pms-task-detail-field-label">${i.drawer.title}</div>
       <input
         type="text"
         class="pms-text-field"
         id="pms-drawer-input-title"
-        value="${St(t.title)}"
-        aria-label="${s.drawer.title}"
+        value="${Et(t.title)}"
+        aria-label="${i.drawer.title}"
       />
     </div>
 
     <div class="pms-task-detail-attr-row">
       <div class="pms-task-detail-field">
-        <div class="pms-task-detail-field-label">${s.drawer.project}</div>
-        <select class="pms-text-field" id="pms-drawer-select-project" aria-label="${s.drawer.project}">
-          <option value=""${e?"":" selected"}>无（${s.sidebar.nav.inbox}）</option>
-          ${a.map(i=>`<option value="${St(i.id)}"${(e==null?void 0:e.id)===i.id?" selected":""}>${Bt(i.name)}</option>`).join("")}
+        <div class="pms-task-detail-field-label">${i.drawer.project}</div>
+        <select class="pms-text-field" id="pms-drawer-select-project" aria-label="${i.drawer.project}">
+          <option value=""${e?"":" selected"}>无（${i.sidebar.nav.inbox}）</option>
+          ${a.map(s=>`<option value="${Et(s.id)}"${(e==null?void 0:e.id)===s.id?" selected":""}>${Nt(s.name)}</option>`).join("")}
         </select>
       </div>
       <div class="pms-task-detail-field">
-        <div class="pms-task-detail-field-label">${s.drawer.priority}</div>
-        <select class="pms-text-field" id="pms-drawer-select-priority" aria-label="${s.drawer.priority}">
-          ${["P1","P2","P3","P4"].map(i=>`<option value="${i}"${t.priority===i?" selected":""}>${i} · ${ka(i)}</option>`).join("")}
+        <div class="pms-task-detail-field-label">${i.drawer.priority}</div>
+        <select class="pms-text-field" id="pms-drawer-select-priority" aria-label="${i.drawer.priority}">
+          ${["P1","P2","P3","P4"].map(s=>`<option value="${s}"${t.priority===s?" selected":""}>${s} · ${za(s)}</option>`).join("")}
         </select>
       </div>
       <div class="pms-task-detail-field">
-        <div class="pms-task-detail-field-label">${s.drawer.status}</div>
+        <div class="pms-task-detail-field-label">${i.drawer.status}</div>
         <div class="pms-task-detail-field-value">
-          <span class="pms-pri-badge ${$a(t.priority)}">${r}</span>
+          <span class="pms-pri-badge ${Ea(t.priority)}">${r}</span>
         </div>
       </div>
       <div class="pms-task-detail-field">
-        <div class="pms-task-detail-field-label">${s.drawer.due}</div>
+        <div class="pms-task-detail-field-label">${i.drawer.due}</div>
         <input
           type="date"
           class="pms-text-field"
           id="pms-drawer-input-due"
-          value="${St(t.dueDate??"")}"
-          aria-label="${s.drawer.due}"
+          value="${Et(t.dueDate??"")}"
+          aria-label="${i.drawer.due}"
         />
       </div>
     </div>
 
     <div class="pms-task-detail-field">
-      <div class="pms-task-detail-field-label">${s.drawer.description}</div>
-      <textarea class="pms-textarea" id="pms-drawer-input-desc" placeholder="为这条任务补充背景或步骤…">${Bt(t.description??"")}</textarea>
+      <div class="pms-task-detail-field-label">${i.drawer.description}</div>
+      <textarea class="pms-textarea" id="pms-drawer-input-desc" placeholder="为这条任务补充背景或步骤…">${Nt(t.description??"")}</textarea>
     </div>
 
     <div class="pms-task-detail-field">
-      <div class="pms-task-detail-field-label">${s.drawer.aiSection}</div>
-      ${De()}
+      <div class="pms-task-detail-field-label">${i.drawer.aiSection}</div>
+      ${je()}
     </div>
 
     <div class="pms-task-detail-field" id="pms-drawer-save-status" style="display:none">
       <div class="pms-task-detail-field-value" id="pms-drawer-save-text" style="color:var(--text-3);font-size:var(--fs-meta)"></div>
     </div>
-  `}function pt(t){const e=document.getElementById("pms-drawer-toggle-done"),a=document.getElementById("pms-drawer-delete");e&&(e.textContent=t.status==="done"?"取消完成":"标记完成"),a&&(a.textContent=_?"确认删除":s.buttons.danger,a.classList.toggle("is-secondary",!_))}function ar(){const t=document.getElementById("pms-drawer-input-title"),e=document.getElementById("pms-drawer-input-desc"),a=document.getElementById("pms-drawer-select-project"),r=document.getElementById("pms-drawer-select-priority"),i=document.getElementById("pms-drawer-input-due"),o=()=>jt(s.drawer.saveNotice);t==null||t.addEventListener("blur",()=>{var c;if(!w)return;const n=t.value.trim();if(!n){t.value=((c=N(w))==null?void 0:c.title)??"";return}Y(w,{title:n}),o();const d=document.getElementById("pms-drawer-title");d&&(d.textContent=n),y==null||y()}),e==null||e.addEventListener("blur",()=>{w&&(Y(w,{description:e.value}),o(),y==null||y())}),a==null||a.addEventListener("change",()=>{if(!w)return;const n=a.value||null;Y(w,{projectId:n}),o(),y==null||y()}),r==null||r.addEventListener("change",()=>{w&&(Y(w,{priority:r.value}),o(),y==null||y())}),i==null||i.addEventListener("change",()=>{w&&(Y(w,{dueDate:i.value||void 0}),o(),y==null||y())})}function rr(){var t,e;(t=document.getElementById("pms-drawer-toggle-done"))==null||t.addEventListener("click",()=>{if(!w)return;const a=N(w);if(!a)return;const r=a.status==="done"?ha(w):xa(w);r&&(pt(r),jt(r.status==="done"?"已标记为完成":"已恢复为未完成")),y==null||y()}),(e=document.getElementById("pms-drawer-delete"))==null||e.addEventListener("click",()=>{if(w){if(!_){_=!0;const a=N(w);a&&pt(a),setTimeout(()=>{if(!_)return;_=!1;const r=w?N(w):null;r&&pt(r)},5e3);return}wa(w),w=null,_=!1,ht(),y==null||y()}}),document.querySelectorAll('[data-act="drawer-save"]').forEach(a=>{a.addEventListener("click",()=>{var r;(r=document.activeElement)==null||r.blur(),jt(s.drawer.saved)})})}let It=null;function jt(t){const e=document.getElementById("pms-drawer-save-status"),a=document.getElementById("pms-drawer-save-text");!e||!a||(a.textContent=t,e.style.display="block",It&&window.clearTimeout(It),It=window.setTimeout(()=>{e.style.display="none"},1600))}function Bt(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}function St(t){return Bt(t)}const V="pms-tb-popover";let l=null,G=null,Ot=null;function sr(t){G=t}function Pt(t,e){const a=$();if(t){const r=xe(t);if(!r)return;const i=new Date(r.start),o=new Date(r.end),[n,d]=[i.getFullYear(),i.getMonth()+1];l={blockId:t,date:$(i),startHhmm:`${O(i.getHours())}:${O(i.getMinutes())}`,endHhmm:`${O(o.getHours())}:${O(o.getMinutes())}`,title:r.title,status:r.status,taskId:r.taskId??null,isEndNextDay:Qe(r.start,r.end),showDeleteConfirm:!1,showDatePicker:!1,dpViewYear:n,dpViewMonth:d,showStartTimePicker:!1,showEndTimePicker:!1,errMsg:""}}else{const r=new Date,i=r.getHours(),o=Math.ceil(r.getMinutes()/30)*30,n=o>=60?0:o,d=o>=60?i+1>=24?23:i+1:i,c=d+1>=24?23:d+1,[p,u]=[r.getFullYear(),r.getMonth()+1];l={blockId:null,date:a,startHhmm:`${O(d)}:${O(n)}`,endHhmm:`${O(c)}:${O(n)}`,title:"",status:"planned",taskId:null,isEndNextDay:!1,showDeleteConfirm:!1,showDatePicker:!1,dpViewYear:p,dpViewMonth:u,showStartTimePicker:!1,showEndTimePicker:!1,errMsg:""}}Ot=(e==null?void 0:e.getBoundingClientRect())??null,ir()}function rt(){var t,e;(t=document.getElementById(V))==null||t.remove(),(e=document.getElementById(`${V}-scrim`))==null||e.remove(),l=null,Ot=null}function Mt(){return!!document.getElementById(V)}function ir(){var a,r;if((a=document.getElementById(V))==null||a.remove(),(r=document.getElementById(`${V}-scrim`))==null||r.remove(),!l)return;const t=document.createElement("div");t.id=`${V}-scrim`,t.style.cssText="position:fixed;inset:0;z-index:499;",t.setAttribute("data-act","close-tb-popover"),document.body.appendChild(t);const e=document.createElement("div");e.id=V,e.className="tbp-wrap",e.innerHTML=Se(l),document.body.appendChild(e),Ie(e),setTimeout(()=>{var i;(i=e.querySelector(".tbp-title-input"))==null||i.focus()},50)}function S(){if(!l)return;const t=document.getElementById(V);t&&(t.innerHTML=Se(l),Ie(t))}function Ie(t){const a=window.innerWidth,r=window.innerHeight,i=Ot;let o,n;i?i.right+420+8<=a-8?(o=i.right+8,n=i.top):i.left-420-8>=8?(o=i.left-420-8,n=i.top):(o=Math.max(8,(a-420)/2),n=80):(o=Math.max(8,(a-420)/2),n=80);const d=t.scrollHeight||480;n+d>r-16&&(n=Math.max(16,r-d-16)),t.style.cssText=`position:fixed;left:${o}px;top:${n}px;width:420px;z-index:500;`}function Se(t){if(t.showDeleteConfirm)return or();const e=!!t.blockId,a=$();let r="";if(e&&t.taskId){const u=N(t.taskId);r=`<div class="tbp-source-row">
+  `}function vt(t){const e=document.getElementById("pms-drawer-toggle-done"),a=document.getElementById("pms-drawer-delete");e&&(e.textContent=t.status==="done"?"取消完成":"标记完成"),a&&(a.textContent=N?"确认删除":i.buttons.danger,a.classList.toggle("is-secondary",!N))}function pr(){const t=document.getElementById("pms-drawer-input-title"),e=document.getElementById("pms-drawer-input-desc"),a=document.getElementById("pms-drawer-select-project"),r=document.getElementById("pms-drawer-select-priority"),s=document.getElementById("pms-drawer-input-due"),o=()=>_t(i.drawer.saveNotice);t==null||t.addEventListener("blur",()=>{var c;if(!w)return;const n=t.value.trim();if(!n){t.value=((c=q(w))==null?void 0:c.title)??"";return}U(w,{title:n}),o();const d=document.getElementById("pms-drawer-title");d&&(d.textContent=n),y==null||y()}),e==null||e.addEventListener("blur",()=>{w&&(U(w,{description:e.value}),o(),y==null||y())}),a==null||a.addEventListener("change",()=>{if(!w)return;const n=a.value||null;U(w,{projectId:n}),o(),y==null||y()}),r==null||r.addEventListener("change",()=>{w&&(U(w,{priority:r.value}),o(),y==null||y())}),s==null||s.addEventListener("change",()=>{w&&(U(w,{dueDate:s.value||void 0}),o(),y==null||y())})}function ur(){var t,e;(t=document.getElementById("pms-drawer-toggle-done"))==null||t.addEventListener("click",()=>{if(!w)return;const a=q(w);if(!a)return;const r=a.status==="done"?Sa(w):Ia(w);r&&(vt(r),_t(r.status==="done"?"已标记为完成":"已恢复为未完成")),y==null||y()}),(e=document.getElementById("pms-drawer-delete"))==null||e.addEventListener("click",()=>{if(w){if(!N){N=!0;const a=q(w);a&&vt(a),setTimeout(()=>{if(!N)return;N=!1;const r=w?q(w):null;r&&vt(r)},5e3);return}Pa(w),w=null,N=!1,yt(),y==null||y()}}),document.querySelectorAll('[data-act="drawer-save"]').forEach(a=>{a.addEventListener("click",()=>{var r;(r=document.activeElement)==null||r.blur(),_t(i.drawer.saved)})})}let zt=null;function _t(t){const e=document.getElementById("pms-drawer-save-status"),a=document.getElementById("pms-drawer-save-text");!e||!a||(a.textContent=t,e.style.display="block",zt&&window.clearTimeout(zt),zt=window.setTimeout(()=>{e.style.display="none"},1600))}function Nt(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}function Et(t){return Nt(t)}const Y="pms-tb-popover";let l=null,X=null,Zt=null;function vr(t){X=t}function At(t,e){const a=$();if(t){const r=Pe(t);if(!r)return;const s=new Date(r.start),o=new Date(r.end),[n,d]=[s.getFullYear(),s.getMonth()+1];l={blockId:t,date:$(s),startHhmm:`${V(s.getHours())}:${V(s.getMinutes())}`,endHhmm:`${V(o.getHours())}:${V(o.getMinutes())}`,title:r.title,status:r.status,taskId:r.taskId??null,isEndNextDay:ca(r.start,r.end),showDeleteConfirm:!1,showDatePicker:!1,dpViewYear:n,dpViewMonth:d,showStartTimePicker:!1,showEndTimePicker:!1,errMsg:""}}else{const r=new Date,s=r.getHours(),o=Math.ceil(r.getMinutes()/30)*30,n=o>=60?0:o,d=o>=60?s+1>=24?23:s+1:s,c=d+1>=24?23:d+1,[p,u]=[r.getFullYear(),r.getMonth()+1];l={blockId:null,date:a,startHhmm:`${V(d)}:${V(n)}`,endHhmm:`${V(c)}:${V(n)}`,title:"",status:"planned",taskId:null,isEndNextDay:!1,showDeleteConfirm:!1,showDatePicker:!1,dpViewYear:p,dpViewMonth:u,showStartTimePicker:!1,showEndTimePicker:!1,errMsg:""}}Zt=(e==null?void 0:e.getBoundingClientRect())??null,mr()}function st(){var t,e;(t=document.getElementById(Y))==null||t.remove(),(e=document.getElementById(`${Y}-scrim`))==null||e.remove(),l=null,Zt=null}function jt(){return!!document.getElementById(Y)}function mr(){var a,r;if((a=document.getElementById(Y))==null||a.remove(),(r=document.getElementById(`${Y}-scrim`))==null||r.remove(),!l)return;const t=document.createElement("div");t.id=`${Y}-scrim`,t.style.cssText="position:fixed;inset:0;z-index:499;",t.setAttribute("data-act","close-tb-popover"),document.body.appendChild(t);const e=document.createElement("div");e.id=Y,e.className="tbp-wrap",e.innerHTML=Le(l),document.body.appendChild(e),Ce(e),setTimeout(()=>{var s;(s=e.querySelector(".tbp-title-input"))==null||s.focus()},50)}function P(){if(!l)return;const t=document.getElementById(Y);t&&(t.innerHTML=Le(l),Ce(t))}function Ce(t){const a=window.innerWidth,r=window.innerHeight,s=Zt;let o,n;s?s.right+420+8<=a-8?(o=s.right+8,n=s.top):s.left-420-8>=8?(o=s.left-420-8,n=s.top):(o=Math.max(8,(a-420)/2),n=80):(o=Math.max(8,(a-420)/2),n=80);const d=t.scrollHeight||480;n+d>r-16&&(n=Math.max(16,r-d-16)),t.style.cssText=`position:fixed;left:${o}px;top:${n}px;width:420px;z-index:500;`}function Le(t){if(t.showDeleteConfirm)return br();const e=!!t.blockId,a=$();let r="";if(e&&t.taskId){const u=q(t.taskId);r=`<div class="tbp-source-row">
       <span class="tbp-source-badge">来源：任务 &middot; ${u?b(u.title):"（任务已删除）"}</span>
       ${u?`<button class="tbp-source-link" data-act="tbp-view-task" data-task-id="${b(t.taskId)}" type="button">查看</button>`:""}
-    </div>`}const o=[{k:"planned",l:s.popover.statusPlanned},{k:"running",l:s.popover.statusRunning},{k:"done",l:s.popover.statusDone}].map(u=>`<button class="tbp-seg-btn${t.status===u.k?" is-active":""}"
-      data-act="tbp-status" data-value="${u.k}" type="button">${b(u.l)}</button>`).join(""),n=!t.isEndNextDay&&pr(t)?`<div class="tbp-endnextday-hint">${b(s.popover.errEndEarly)}
-        <button class="tbp-btn-sm" data-act="tbp-confirm-nextday" type="button">${b(s.popover.confirmNextDay)}</button>
-        <button class="tbp-btn-sm is-ghost" data-act="tbp-cancel-nextday" type="button">${b(s.popover.confirmNo)}</button>
-       </div>`:"",d=t.isEndNextDay?`<div class="tbp-cross-day-label">跨日 · 次日 ${b(t.endHhmm)}（共 ${b(ur(t))}）</div>`:"",c=t.errMsg?`<div class="tbp-err">${b(t.errMsg)}</div>`:"",p=ce(t.date,a);return`
+    </div>`}const o=[{k:"planned",l:i.popover.statusPlanned},{k:"running",l:i.popover.statusRunning},{k:"done",l:i.popover.statusDone}].map(u=>`<button class="tbp-seg-btn${t.status===u.k?" is-active":""}"
+      data-act="tbp-status" data-value="${u.k}" type="button">${b(u.l)}</button>`).join(""),n=!t.isEndNextDay&&wr(t)?`<div class="tbp-endnextday-hint">${b(i.popover.errEndEarly)}
+        <button class="tbp-btn-sm" data-act="tbp-confirm-nextday" type="button">${b(i.popover.confirmNextDay)}</button>
+        <button class="tbp-btn-sm is-ghost" data-act="tbp-cancel-nextday" type="button">${b(i.popover.confirmNo)}</button>
+       </div>`:"",d=t.isEndNextDay?`<div class="tbp-cross-day-label">跨日 · 次日 ${b(t.endHhmm)}（共 ${b(yr(t))}）</div>`:"",c=t.errMsg?`<div class="tbp-err">${b(t.errMsg)}</div>`:"",p=fe(t.date,a);return`
 <div class="tbp-head">
-  <div class="tbp-head-title">${b(e?s.popover.titleEdit:s.popover.titleCreate)}</div>
+  <div class="tbp-head-title">${b(e?i.popover.titleEdit:i.popover.titleCreate)}</div>
   <button class="tbp-close" data-act="close-tb-popover" type="button">&#x2715;</button>
 </div>
 ${r}
 <div class="tbp-body">
   <input class="tbp-title-input" type="text"
-    placeholder="${b(s.popover.placeholder)}"
+    placeholder="${b(i.popover.placeholder)}"
     value="${b(t.title)}"
     data-act="tbp-title-input"
     autocomplete="off" />
   ${c}
   <div class="tbp-field-row">
-    <span class="tbp-field-lbl">${b(s.popover.fieldStatus)}</span>
+    <span class="tbp-field-lbl">${b(i.popover.fieldStatus)}</span>
     <div class="tbp-seg">${o}</div>
   </div>
   <div class="tbp-field-row">
-    <span class="tbp-field-lbl">${b(s.popover.fieldDate)}</span>
+    <span class="tbp-field-lbl">${b(i.popover.fieldDate)}</span>
     <button class="tbp-field-btn${t.showDatePicker?" is-active":""}"
       data-act="tbp-toggle-date" type="button">${b(p)}</button>
   </div>
-  ${t.showDatePicker?nr(t):""}
+  ${t.showDatePicker?gr(t):""}
   <div class="tbp-field-row">
-    <span class="tbp-field-lbl">${b(s.popover.fieldTime)}</span>
+    <span class="tbp-field-lbl">${b(i.popover.fieldTime)}</span>
     <div class="tbp-time-row">
       <button class="tbp-field-btn${t.showStartTimePicker?" is-active":""}"
         data-act="tbp-toggle-start-tp" type="button">${b(t.startHhmm)}</button>
@@ -2310,24 +2331,24 @@ ${r}
   </div>
   ${n}
   ${d}
-  ${t.showStartTimePicker?Qt("start",t.startHhmm,t.startHhmm):""}
-  ${t.showEndTimePicker?Qt("end",t.endHhmm,t.startHhmm):""}
+  ${t.showStartTimePicker?se("start",t.startHhmm,t.startHhmm):""}
+  ${t.showEndTimePicker?se("end",t.endHhmm,t.startHhmm):""}
 </div>
 <div class="tbp-footer">
-  ${e?`<button class="tbp-del-btn" data-act="tbp-delete" type="button">${b(s.popover.btnDelete)}</button>`:""}
-  ${e&&t.status==="done"?`<button class="tbp-review-btn" data-act="tbp-open-review" type="button">${b(s.popover.btnReview)}</button>`:""}
+  ${e?`<button class="tbp-del-btn" data-act="tbp-delete" type="button">${b(i.popover.btnDelete)}</button>`:""}
+  ${e&&t.status==="done"?`<button class="tbp-review-btn" data-act="tbp-open-review" type="button">${b(i.popover.btnReview)}</button>`:""}
   <div style="flex:1"></div>
-  <button class="tbp-ghost-btn" data-act="close-tb-popover" type="button">${b(s.popover.btnCancel)}</button>
-  <button class="tbp-save-btn" data-act="tbp-save" type="button">${b(s.popover.btnSave)}</button>
-</div>`}function or(){return`
+  <button class="tbp-ghost-btn" data-act="close-tb-popover" type="button">${b(i.popover.btnCancel)}</button>
+  <button class="tbp-save-btn" data-act="tbp-save" type="button">${b(i.popover.btnSave)}</button>
+</div>`}function br(){return`
 <div class="tbp-body" style="padding:20px 16px;">
-  <div class="tbp-dc-title">${b(s.popover.deleteConfirmTitle)}</div>
-  <div class="tbp-dc-desc">${b(s.popover.deleteConfirmDesc)}</div>
+  <div class="tbp-dc-title">${b(i.popover.deleteConfirmTitle)}</div>
+  <div class="tbp-dc-desc">${b(i.popover.deleteConfirmDesc)}</div>
   <div class="tbp-dc-actions">
-    <button class="tbp-ghost-btn" data-act="tbp-cancel-delete" type="button">${b(s.popover.deleteConfirmCancel)}</button>
-    <button class="tbp-danger-btn" data-act="tbp-confirm-delete" type="button">${b(s.popover.deleteConfirmOk)}</button>
+    <button class="tbp-ghost-btn" data-act="tbp-cancel-delete" type="button">${b(i.popover.deleteConfirmCancel)}</button>
+    <button class="tbp-danger-btn" data-act="tbp-confirm-delete" type="button">${b(i.popover.deleteConfirmOk)}</button>
   </div>
-</div>`}function nr(t){const e=$(),a=sa(t.dpViewYear,t.dpViewMonth),r=[{k:e,l:s.datePicker.today},{k:tt(e,1),l:s.datePicker.tomorrow},{k:ea(e),l:s.datePicker.thisWeekFriday},{k:aa(e),l:s.datePicker.nextMonday}],i=a.map(({key:o,date:n,isCurrentMonth:d})=>`<div class="${["dp-cell",o===e?"dp-today":"",o===t.date?"dp-selected":"",d?"":"dp-other"].filter(Boolean).join(" ")}" data-act="tbp-pick-date" data-value="${b(o)}">${n}</div>`).join("");return`<div class="tbp-inline-dp">
+</div>`}function gr(t){const e=$(),a=we(t.dpViewYear,t.dpViewMonth),r=[{k:e,l:i.datePicker.today},{k:tt(e,1),l:i.datePicker.tomorrow},{k:xe(e),l:i.datePicker.thisWeekFriday},{k:he(e),l:i.datePicker.nextMonday}],s=a.map(({key:o,date:n,isCurrentMonth:d})=>`<div class="${["dp-cell",o===e?"dp-today":"",o===t.date?"dp-selected":"",d?"":"dp-other"].filter(Boolean).join(" ")}" data-act="tbp-pick-date" data-value="${b(o)}">${n}</div>`).join("");return`<div class="tbp-inline-dp">
     <div class="dp-header">
       <button class="dp-nav-btn" data-act="tbp-dp-prev" type="button">&#8249;</button>
       <div class="dp-title">${t.dpViewYear}年${t.dpViewMonth}月</div>
@@ -2336,14 +2357,14 @@ ${r}
     <div class="dp-shortcuts">
       ${r.map(o=>`<button class="dp-shortcut${o.k===t.date?" dp-sc-active":""}" data-act="tbp-pick-date" data-value="${b(o.k)}" type="button">${b(o.l)}</button>`).join("")}
     </div>
-    <div class="dp-weekdays">${s.datePicker.weekdays.map(o=>`<div class="dp-wd">${b(o)}</div>`).join("")}</div>
-    <div class="dp-grid">${i}</div>
-  </div>`}function Qt(t,e,a){const r=et(a),i=bt(zt(),30),o=et(e),n=Math.ceil((r+1)/60)*60,d=t==="end"?[{l:s.timePicker.quickAdd30m,m:r+30},{l:s.timePicker.quickAdd1h,m:r+60},{l:s.timePicker.quickAdd2h,m:r+120},{l:s.timePicker.quickToNextHour,m:n}]:[],c=[];for(let p=0;p<24*60;p+=30){const u=K(p),g=p===o,f=p===i,k=f?`${u}${s.timePicker.nowSuffix}`:u,j=["tp-opt",g?"tp-opt-selected":"",f&&!g?"tp-opt-now":""].filter(Boolean).join(" ");c.push(`<div class="${j}" data-act="tbp-pick-time" data-which="${t}" data-mins="${p}">${b(k)}</div>`)}return`<div class="tbp-inline-tp">
+    <div class="dp-weekdays">${i.datePicker.weekdays.map(o=>`<div class="dp-wd">${b(o)}</div>`).join("")}</div>
+    <div class="dp-grid">${s}</div>
+  </div>`}function se(t,e,a){const r=rt(a),s=ft(Ct(),30),o=rt(e),n=Math.ceil((r+1)/60)*60,d=t==="end"?[{l:i.timePicker.quickAdd30m,m:r+30},{l:i.timePicker.quickAdd1h,m:r+60},{l:i.timePicker.quickAdd2h,m:r+120},{l:i.timePicker.quickToNextHour,m:n}]:[],c=[];for(let p=0;p<24*60;p+=30){const u=K(p),g=p===o,f=p===s,k=f?`${u}${i.timePicker.nowSuffix}`:u,B=["tp-opt",g?"tp-opt-selected":"",f&&!g?"tp-opt-now":""].filter(Boolean).join(" ");c.push(`<div class="${B}" data-act="tbp-pick-time" data-which="${t}" data-mins="${p}">${b(k)}</div>`)}return`<div class="tbp-inline-tp">
     ${d.length?`<div class="tp-quicks">
       ${d.map(p=>`<button class="tp-quick-btn" data-act="tbp-pick-time-quick" data-which="${t}" data-mins="${p.m}" type="button">${b(p.l)}</button>`).join("")}
     </div>`:""}
     <div class="tp-list" style="max-height:160px;overflow-y:auto">${c.join("")}</div>
-  </div>`}function dr(t,e){if(l)switch(t){case"close-tb-popover":rt();return;case"tbp-status":{const a=e.dataset.value;a&&(l.status=a,S());return}case"tbp-toggle-date":l.showDatePicker=!l.showDatePicker,l.showStartTimePicker=!1,l.showEndTimePicker=!1,S();return;case"tbp-dp-prev":l.dpViewMonth-=1,l.dpViewMonth<1&&(l.dpViewMonth=12,l.dpViewYear-=1),S();return;case"tbp-dp-next":l.dpViewMonth+=1,l.dpViewMonth>12&&(l.dpViewMonth=1,l.dpViewYear+=1),S();return;case"tbp-pick-date":{const a=e.dataset.value;a&&(l.date=a,l.showDatePicker=!1,S());return}case"tbp-toggle-start-tp":l.showStartTimePicker=!l.showStartTimePicker,l.showEndTimePicker=!1,l.showDatePicker=!1,S();return;case"tbp-toggle-end-tp":l.showEndTimePicker=!l.showEndTimePicker,l.showStartTimePicker=!1,l.showDatePicker=!1,S();return;case"tbp-pick-time":{const a=e.dataset.which,r=Number(e.dataset.mins);a==="start"?(l.startHhmm=K(r),l.showStartTimePicker=!1):(l.endHhmm=K(r),l.showEndTimePicker=!1),l.errMsg="",S();return}case"tbp-pick-time-quick":{const a=e.dataset.which,r=Number(e.dataset.mins),i=K(r>=24*60?r%(24*60):r);a==="start"?(l.startHhmm=i,l.showStartTimePicker=!1):(l.endHhmm=i,l.showEndTimePicker=!1),l.errMsg="",S();return}case"tbp-confirm-nextday":l.isEndNextDay=!0,l.errMsg="",S();return;case"tbp-cancel-nextday":l.isEndNextDay=!1,S();return;case"tbp-save":cr();return;case"tbp-delete":l.showDeleteConfirm=!0,S();return;case"tbp-cancel-delete":l.showDeleteConfirm=!1,S();return;case"tbp-confirm-delete":l.blockId&&(Da(l.blockId),rt(),G==null||G());return;case"tbp-view-task":{const a=e.dataset.taskId;a&&(rt(),document.dispatchEvent(new CustomEvent("pms-open-task-drawer",{detail:{taskId:a}})));return}case"tbp-open-review":return}}function lr(t){l&&t.classList.contains("tbp-title-input")&&(l.title=t.value,l.errMsg="")}function cr(){if(!l)return;if(!l.title.trim()){l.errMsg=s.popover.errTitle,S();return}const t=Q(l.date,l.startHhmm),e=l.isEndNextDay?tt(l.date,1):l.date,a=Q(e,l.endHhmm);if(!l.isEndNextDay&&new Date(a).getTime()<=new Date(t).getTime()){l.errMsg=s.popover.errEndEarly,S();return}l.blockId?Ft(l.blockId,{title:l.title.trim(),start:t,end:a,status:l.status}):qt({title:l.title.trim(),start:t,end:a,status:l.status}),rt(),G==null||G()}function pr(t){return et(t.endHhmm)<et(t.startHhmm)}function ur(t){const e=et(t.startHhmm),a=et(t.endHhmm);return ra(Math.max(0,t.isEndNextDay?24*60-e+a:a-e))}function O(t){return String(t).padStart(2,"0")}function b(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}let wt=null;const kt="pms-review-flyout";function vr(t,e){J(),wt=t;const a=xe(t);if(!a)return;const r=document.createElement("div");r.id=kt,r.className="rf-wrap",r.innerHTML=mr(a.title,a.start,a.end,a.reviewNote??""),document.body.appendChild(r),br(r,e),setTimeout(()=>{var i;(i=r.querySelector(".rf-textarea"))==null||i.focus()},50),setTimeout(()=>{document.addEventListener("click",Pe,{once:!1,capture:!0})},0)}function J(){var t;(t=document.getElementById(kt))==null||t.remove(),document.removeEventListener("click",Pe,!0),wt=null}function mr(t,e,a,r){return`
+  </div>`}function fr(t,e){if(l)switch(t){case"close-tb-popover":st();return;case"tbp-status":{const a=e.dataset.value;a&&(l.status=a,P());return}case"tbp-toggle-date":l.showDatePicker=!l.showDatePicker,l.showStartTimePicker=!1,l.showEndTimePicker=!1,P();return;case"tbp-dp-prev":l.dpViewMonth-=1,l.dpViewMonth<1&&(l.dpViewMonth=12,l.dpViewYear-=1),P();return;case"tbp-dp-next":l.dpViewMonth+=1,l.dpViewMonth>12&&(l.dpViewMonth=1,l.dpViewYear+=1),P();return;case"tbp-pick-date":{const a=e.dataset.value;a&&(l.date=a,l.showDatePicker=!1,P());return}case"tbp-toggle-start-tp":l.showStartTimePicker=!l.showStartTimePicker,l.showEndTimePicker=!1,l.showDatePicker=!1,P();return;case"tbp-toggle-end-tp":l.showEndTimePicker=!l.showEndTimePicker,l.showStartTimePicker=!1,l.showDatePicker=!1,P();return;case"tbp-pick-time":{const a=e.dataset.which,r=Number(e.dataset.mins);a==="start"?(l.startHhmm=K(r),l.showStartTimePicker=!1):(l.endHhmm=K(r),l.showEndTimePicker=!1),l.errMsg="",P();return}case"tbp-pick-time-quick":{const a=e.dataset.which,r=Number(e.dataset.mins),s=K(r>=24*60?r%(24*60):r);a==="start"?(l.startHhmm=s,l.showStartTimePicker=!1):(l.endHhmm=s,l.showEndTimePicker=!1),l.errMsg="",P();return}case"tbp-confirm-nextday":l.isEndNextDay=!0,l.errMsg="",P();return;case"tbp-cancel-nextday":l.isEndNextDay=!1,P();return;case"tbp-save":hr();return;case"tbp-delete":l.showDeleteConfirm=!0,P();return;case"tbp-cancel-delete":l.showDeleteConfirm=!1,P();return;case"tbp-confirm-delete":l.blockId&&(Aa(l.blockId),st(),X==null||X());return;case"tbp-view-task":{const a=e.dataset.taskId;a&&(st(),document.dispatchEvent(new CustomEvent("pms-open-task-drawer",{detail:{taskId:a}})));return}case"tbp-open-review":return}}function xr(t){l&&t.classList.contains("tbp-title-input")&&(l.title=t.value,l.errMsg="")}function hr(){if(!l)return;if(!l.title.trim()){l.errMsg=i.popover.errTitle,P();return}const t=at(l.date,l.startHhmm),e=l.isEndNextDay?tt(l.date,1):l.date,a=at(e,l.endHhmm);if(!l.isEndNextDay&&new Date(a).getTime()<=new Date(t).getTime()){l.errMsg=i.popover.errEndEarly,P();return}l.blockId?Kt(l.blockId,{title:l.title.trim(),start:t,end:a,status:l.status}):Yt({title:l.title.trim(),start:t,end:a,status:l.status}),st(),X==null||X()}function wr(t){return rt(t.endHhmm)<rt(t.startHhmm)}function yr(t){const e=rt(t.startHhmm),a=rt(t.endHhmm);return ua(Math.max(0,t.isEndNextDay?24*60-e+a:a-e))}function V(t){return String(t).padStart(2,"0")}function b(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}let kt=null;const Tt="pms-review-flyout";function kr(t,e){Q(),kt=t;const a=Pe(t);if(!a)return;const r=document.createElement("div");r.id=Tt,r.className="rf-wrap",r.innerHTML=$r(a.title,a.start,a.end,a.reviewNote??""),document.body.appendChild(r),Dr(r,e),setTimeout(()=>{var s;(s=r.querySelector(".rf-textarea"))==null||s.focus()},50),setTimeout(()=>{document.addEventListener("click",He,{once:!1,capture:!0})},0)}function Q(){var t;(t=document.getElementById(Tt))==null||t.remove(),document.removeEventListener("click",He,!0),kt=null}function $r(t,e,a,r){return`
 <div class="rf-head">
   <div class="rf-icon">
     <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
@@ -2351,25 +2372,25 @@ ${r}
             fill="var(--accent)" opacity=".8"/>
     </svg>
   </div>
-  <div class="rf-title">${H(s.review.title)}</div>
+  <div class="rf-title">${_(i.review.title)}</div>
   <button class="rf-close" data-act="close-review" type="button">&#x2715;</button>
 </div>
-<div class="rf-block-name">${H(t)}</div>
-<div class="rf-block-time">${H(U(e))} — ${H(U(a))}</div>
-<textarea class="rf-textarea" placeholder="${H(s.review.placeholder)}"
-  rows="4">${H(r)}</textarea>
+<div class="rf-block-name">${_(t)}</div>
+<div class="rf-block-time">${_(G(e))} — ${_(G(a))}</div>
+<textarea class="rf-textarea" placeholder="${_(i.review.placeholder)}"
+  rows="4">${_(r)}</textarea>
 <div class="rf-ai-hint">
   <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
     <path d="M5 1L6.2 3.9H9.5L6.8 5.9 7.7 9 5 7.2 2.3 9 3.2 5.9.5 3.9H3.8L5 1Z"
           fill="var(--accent)" opacity=".5"/>
   </svg>
-  ${H(s.review.aiHint)}
+  ${_(i.review.aiHint)}
 </div>
 <div class="rf-actions">
-  <button class="rf-skip" data-act="close-review" type="button">${H(s.review.skip)}</button>
+  <button class="rf-skip" data-act="close-review" type="button">${_(i.review.skip)}</button>
   <div style="flex:1"></div>
-  <button class="rf-save" data-act="save-review" type="button">${H(s.review.save)}</button>
-</div>`}function br(t,e){const a=e.getBoundingClientRect(),r=320,i=window.innerWidth,o=window.innerHeight;let n=a.right+8;n+r>i-8&&(n=a.left-r-8),n<8&&(n=8);let d=a.top;d+300>o-8&&(d=o-308),d<8&&(d=8),t.style.cssText=`position:fixed;left:${n}px;top:${d}px;z-index:600;`}function Pe(t){const e=document.getElementById(kt);if(!e){J();return}e.contains(t.target)||J()}function gr(t){if(t==="close-review"){J();return}if(t==="save-review"){const e=document.getElementById(kt);if(!e||!wt){J();return}const a=e.querySelector(".rf-textarea"),r=(a==null?void 0:a.value)??"";Ta(wt,r),J();return}}function H(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}function fr(t){const{dateKey:e,availStart:a,availEnd:r,selectedTasks:i,skipBlocks:o=[]}=t,n=$(),c=it(e).filter(f=>!o.includes(f.id)).map(f=>{const k=new Date(f.start),j=new Date(f.end),z=new Date(e+"T00:00:00"),E=Math.floor((k.getTime()-z.getTime())/6e4),R=Math.floor((j.getTime()-z.getTime())/6e4);return[Math.max(0,E),Math.min(24*60,R)]}),p=[...i].sort((f,k)=>{const j={P1:0,P2:1,P3:2,P4:3},z=f.dueDate&&f.dueDate<n?-100:0,E=k.dueDate&&k.dueDate<n?-100:0,R=f.dueDate?new Date(f.dueDate).getTime():Number.MAX_SAFE_INTEGER,$t=k.dueDate?new Date(k.dueDate).getTime():Number.MAX_SAFE_INTEGER,nt=j[f.priority]-j[k.priority];return z!==E?z-E:nt!==0?nt:R-$t});let u=a;const g=[];for(const f of p){const k=f.aiEstimatedMinutes??60,j=15;let z=bt(u,j),E=z+k,R=0;for(;R<100;){const Wt=c.find(([je,Be])=>Be>z&&je<E);if(!Wt)break;z=bt(Wt[1]+5,j),E=z+k,R++}if(E>r)break;const $t=Q(e,K(z)),nt=Q(e,K(E));g.push({id:`draft_${f.id}_${Date.now()}`,title:f.title,sourceType:"task",taskId:f.id,start:$t,end:nt,reason:xr(f,n)}),c.push([z,E]),u=E+5}return g}function xr(t,e){return t.dueDate&&t.dueDate<e?`逾期任务 · ${t.priority}`:t.dueDate===e?`今日截止 · ${t.priority}`:t.priority==="P1"?"紧急优先级":t.priority==="P2"?"高优先级":t.priority}const Vt="pms-ai-schedule-card",Me="pms-ai-schedule-scrim";let m={phase:"unconfigured"},ut=null;function hr(t){ut=t}function wr(){Kt(),m={phase:"interview",page:1,data:{dateKey:$(),availStart:7*60,availEnd:23*60,fixedBlockIds:[],selectedTaskIds:[],skippedTaskIds:[]}},yr()}function Kt(){var t,e;(t=document.getElementById(Vt))==null||t.remove(),(e=document.getElementById(Me))==null||e.remove()}function yr(){const t=document.createElement("div");t.id=Me,t.className="ai-card-scrim",t.setAttribute("data-act","close-ai-schedule"),document.body.appendChild(t);const e=document.createElement("div");e.id=Vt,e.className="ai-card-wrap",e.innerHTML=ze(),document.body.appendChild(e)}function B(){const t=document.getElementById(Vt);t&&(t.innerHTML=ze())}function ze(){switch(m.phase){case"unconfigured":return kr();case"interview":return Tr(m.page,m.data);case"loading":return $r();case"error":return Dr(m.errMsg);case"draft":return zr(m.items,m.data);case"applied":return Er()}}function L(t,e=8){const a=Array.from({length:e},(r,i)=>`<div class="${i<t-1?"ai-prog-done":i===t-1?"ai-prog-active":"ai-prog-empty"}"></div>`).join("");return`
+  <button class="rf-save" data-act="save-review" type="button">${_(i.review.save)}</button>
+</div>`}function Dr(t,e){const a=e.getBoundingClientRect(),r=320,s=window.innerWidth,o=window.innerHeight;let n=a.right+8;n+r>s-8&&(n=a.left-r-8),n<8&&(n=8);let d=a.top;d+300>o-8&&(d=o-308),d<8&&(d=8),t.style.cssText=`position:fixed;left:${n}px;top:${d}px;z-index:600;`}function He(t){const e=document.getElementById(Tt);if(!e){Q();return}e.contains(t.target)||Q()}function Tr(t){if(t==="close-review"){Q();return}if(t==="save-review"){const e=document.getElementById(Tt);if(!e||!kt){Q();return}const a=e.querySelector(".rf-textarea"),r=(a==null?void 0:a.value)??"";ja(kt,r),Q();return}}function _(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}function Ir(t){const{dateKey:e,availStart:a,availEnd:r,selectedTasks:s,skipBlocks:o=[]}=t,n=$(),c=nt(e).filter(f=>!o.includes(f.id)).map(f=>{const k=new Date(f.start),B=new Date(f.end),E=new Date(e+"T00:00:00"),j=Math.floor((k.getTime()-E.getTime())/6e4),O=Math.floor((B.getTime()-E.getTime())/6e4);return[Math.max(0,j),Math.min(24*60,O)]}),p=[...s].sort((f,k)=>{const B={P1:0,P2:1,P3:2,P4:3},E=f.dueDate&&f.dueDate<n?-100:0,j=k.dueDate&&k.dueDate<n?-100:0,O=f.dueDate?new Date(f.dueDate).getTime():Number.MAX_SAFE_INTEGER,St=k.dueDate?new Date(k.dueDate).getTime():Number.MAX_SAFE_INTEGER,lt=B[f.priority]-B[k.priority];return E!==j?E-j:lt!==0?lt:O-St});let u=a;const g=[];for(const f of p){const k=f.aiEstimatedMinutes??60,B=15;let E=ft(u,B),j=E+k,O=0;for(;O<100;){const Qt=c.find(([Ve,Ye])=>Ye>E&&Ve<j);if(!Qt)break;E=ft(Qt[1]+5,B),j=E+k,O++}if(j>r)break;const St=at(e,K(E)),lt=at(e,K(j));g.push({id:`draft_${f.id}_${Date.now()}`,title:f.title,sourceType:"task",taskId:f.id,start:St,end:lt,reason:Sr(f,n)}),c.push([E,j]),u=j+5}return g}function Sr(t,e){return t.dueDate&&t.dueDate<e?`逾期任务 · ${t.priority}`:t.dueDate===e?`今日截止 · ${t.priority}`:t.priority==="P1"?"紧急优先级":t.priority==="P2"?"高优先级":t.priority}const Gt="pms-ai-schedule-card",_e="pms-ai-schedule-scrim";let m={phase:"unconfigured"},mt=null;function Pr(t){mt=t}function Mr(){Jt(),m={phase:"interview",page:1,data:{dateKey:$(),availStart:7*60,availEnd:23*60,fixedBlockIds:[],selectedTaskIds:[],skippedTaskIds:[]}},zr()}function Jt(){var t,e;(t=document.getElementById(Gt))==null||t.remove(),(e=document.getElementById(_e))==null||e.remove()}function zr(){const t=document.createElement("div");t.id=_e,t.className="ai-card-scrim",t.setAttribute("data-act","close-ai-schedule"),document.body.appendChild(t);const e=document.createElement("div");e.id=Gt,e.className="ai-card-wrap",e.innerHTML=Ne(),document.body.appendChild(e)}function C(){const t=document.getElementById(Gt);t&&(t.innerHTML=Ne())}function Ne(){switch(m.phase){case"unconfigured":return Er();case"interview":return Br(m.page,m.data);case"loading":return Ar();case"error":return jr(m.errMsg);case"draft":return Nr(m.items,m.data);case"applied":return qr()}}function H(t,e=8){const a=Array.from({length:e},(r,s)=>`<div class="${s<t-1?"ai-prog-done":s===t-1?"ai-prog-active":"ai-prog-empty"}"></div>`).join("");return`
 <div class="ai-card-top">
   <div class="ai-card-logo">
     <svg width="12" height="12" viewBox="0 0 10 10" fill="none">
@@ -2377,19 +2398,19 @@ ${r}
             fill="white" opacity=".9"/>
     </svg>
   </div>
-  <div class="ai-card-lbl">${v(s.ai.arrange.cardTitle)}</div>
+  <div class="ai-card-lbl">${v(i.ai.arrange.cardTitle)}</div>
   <div class="ai-prog">${a}</div>
   <button class="ai-card-close" data-act="close-ai-schedule" type="button">&#x2715;</button>
-</div>`}function ot(t,e,a){return`
+</div>`}function dt(t,e,a){return`
 <div class="ai-card-footer">
-  <button class="ai-skip-btn" data-act="close-ai-schedule" type="button">${v(s.ai.arrange.cancelBtn)}</button>
+  <button class="ai-skip-btn" data-act="close-ai-schedule" type="button">${v(i.ai.arrange.cancelBtn)}</button>
   <div style="flex:1"></div>
-  ${e?`<button class="ai-prev-btn" data-act="ai-prev" type="button">${v(s.ai.arrange.prevBtn)}</button>`:""}
+  ${e?`<button class="ai-prev-btn" data-act="ai-prev" type="button">${v(i.ai.arrange.prevBtn)}</button>`:""}
   <button class="ai-next-btn" data-act="ai-next" type="button">
-    ${v(a??s.ai.arrange.nextBtn)} ›
+    ${v(a??i.ai.arrange.nextBtn)} ›
   </button>
-</div>`}function kr(){return`
-${L(1)}
+</div>`}function Er(){return`
+${H(1)}
 <div class="ai-card-body ai-state-body">
   <div class="ai-state-icon unconfigured">
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -2398,18 +2419,18 @@ ${L(1)}
       <circle cx="10" cy="14" r="1" fill="var(--text-3)"/>
     </svg>
   </div>
-  <div class="ai-state-title">${v(s.ai.arrange.unconfiguredTitle)}</div>
-  <div class="ai-state-desc">${v(s.ai.arrange.unconfiguredDesc)}</div>
+  <div class="ai-state-title">${v(i.ai.arrange.unconfiguredTitle)}</div>
+  <div class="ai-state-desc">${v(i.ai.arrange.unconfiguredDesc)}</div>
   <div class="ai-state-actions">
     <button class="ai-action-btn is-primary" data-act="ai-use-mock" type="button">
-      ${v(s.ai.arrange.mockBtn)}
+      ${v(i.ai.arrange.mockBtn)}
     </button>
     <button class="ai-action-btn is-sec" data-act="close-ai-schedule" type="button">
-      ${v(s.ai.arrange.cancelBtn)}
+      ${v(i.ai.arrange.cancelBtn)}
     </button>
   </div>
-</div>`}function $r(){return`
-${L(6,6)}
+</div>`}function Ar(){return`
+${H(6,6)}
 <div class="ai-card-body ai-state-body">
   <div class="ai-state-icon loading">
     <svg width="20" height="20" viewBox="0 0 10 10" fill="none">
@@ -2417,12 +2438,12 @@ ${L(6,6)}
             fill="var(--accent)" opacity=".8"/>
     </svg>
   </div>
-  <div class="ai-state-title">${v(s.ai.arrange.loadingTitle)}</div>
+  <div class="ai-state-title">${v(i.ai.arrange.loadingTitle)}</div>
   <div class="ai-loading-dots">
     <div class="ai-dot"></div><div class="ai-dot"></div><div class="ai-dot"></div>
   </div>
-</div>`}function Dr(t){return`
-${L(6)}
+</div>`}function jr(t){return`
+${H(6)}
 <div class="ai-card-body ai-state-body">
   <div class="ai-state-icon error">
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -2430,16 +2451,16 @@ ${L(6)}
       <path d="M10 6v5M10 14v.5" stroke="var(--danger)" stroke-width="1.5" stroke-linecap="round"/>
     </svg>
   </div>
-  <div class="ai-state-title">${v(s.ai.arrange.errorTitle)}</div>
-  <div class="ai-state-desc">${v(t||s.ai.arrange.errorDesc)}</div>
+  <div class="ai-state-title">${v(i.ai.arrange.errorTitle)}</div>
+  <div class="ai-state-desc">${v(t||i.ai.arrange.errorDesc)}</div>
   <div class="ai-state-actions">
-    <button class="ai-action-btn is-primary" data-act="ai-use-mock" type="button">${v(s.ai.arrange.mockBtn)}</button>
-    <button class="ai-action-btn is-sec" data-act="close-ai-schedule" type="button">${v(s.ai.arrange.cancelBtn)}</button>
+    <button class="ai-action-btn is-primary" data-act="ai-use-mock" type="button">${v(i.ai.arrange.mockBtn)}</button>
+    <button class="ai-action-btn is-sec" data-act="close-ai-schedule" type="button">${v(i.ai.arrange.cancelBtn)}</button>
   </div>
-</div>`}function Tr(t,e){const a=$();switch(t){case 1:return te(e,a);case 2:return Ir(e);case 3:return Sr(e);case 4:return Pr(e,a);case 5:return Mr(e,a);default:return te(e,a)}}function te(t,e){const a=[{k:e,l:s.ai.arrange.pages.p1Today},{k:tt(e,1),l:s.ai.arrange.pages.p1Tomorrow},{k:tt(e,2),l:s.ai.arrange.pages.p1Dayafter}];return`
-${L(1)}
+</div>`}function Br(t,e){const a=$();switch(t){case 1:return oe(e,a);case 2:return Cr(e);case 3:return Lr(e);case 4:return Hr(e,a);case 5:return _r(e,a);default:return oe(e,a)}}function oe(t,e){const a=[{k:e,l:i.ai.arrange.pages.p1Today},{k:tt(e,1),l:i.ai.arrange.pages.p1Tomorrow},{k:tt(e,2),l:i.ai.arrange.pages.p1Dayafter}];return`
+${H(1)}
 <div class="ai-card-body">
-  <div class="ai-question">${v(s.ai.arrange.pages.p1Title)}</div>
+  <div class="ai-question">${v(i.ai.arrange.pages.p1Title)}</div>
   <div class="ai-options">
     ${a.map(r=>`
       <button class="ai-option${t.dateKey===r.k?" is-selected":""}"
@@ -2449,14 +2470,14 @@ ${L(1)}
       </button>`).join("")}
     <button class="ai-option" data-act="ai-p1-custom" type="button">
       <div class="ai-opt-icon"></div>
-      ${v(s.ai.arrange.pages.p1Custom)} →
+      ${v(i.ai.arrange.pages.p1Custom)} →
     </button>
   </div>
 </div>
-${ot(1,!1)}`}function Ir(t){const e=[{start:420,end:1380,l:s.ai.arrange.pages.p2Default},{start:480,end:1380,l:s.ai.arrange.pages.p2Late},{start:420,end:1320,l:s.ai.arrange.pages.p2Early}];return`
-${L(2)}
+${dt(1,!1)}`}function Cr(t){const e=[{start:420,end:1380,l:i.ai.arrange.pages.p2Default},{start:480,end:1380,l:i.ai.arrange.pages.p2Late},{start:420,end:1320,l:i.ai.arrange.pages.p2Early}];return`
+${H(2)}
 <div class="ai-card-body">
-  <div class="ai-question">${v(s.ai.arrange.pages.p2Title)}</div>
+  <div class="ai-question">${v(i.ai.arrange.pages.p2Title)}</div>
   <div class="ai-options">
     ${e.map(a=>`
       <button class="ai-option${t.availStart===a.start&&t.availEnd===a.end?" is-selected":""}"
@@ -2466,71 +2487,71 @@ ${L(2)}
       </button>`).join("")}
   </div>
 </div>
-${ot(2,!0)}`}function Sr(t){const e=t.dateKey,a=it(e);return`
-${L(3)}
+${dt(2,!0)}`}function Lr(t){const e=t.dateKey,a=nt(e);return`
+${H(3)}
 <div class="ai-card-body">
-  <div class="ai-question">${v(s.ai.arrange.pages.p3Title)}</div>
-  <div class="ai-hint-text">${v(s.ai.arrange.pages.p3Hint)}</div>
+  <div class="ai-question">${v(i.ai.arrange.pages.p3Title)}</div>
+  <div class="ai-hint-text">${v(i.ai.arrange.pages.p3Hint)}</div>
   ${a.length===0?'<div class="ai-empty-hint">今天暂无已有安排，AI 会从空白开始规划。</div>':`<div class="ai-task-list">
-        ${a.map(r=>{const i=!t.fixedBlockIds.includes(r.id)||t.fixedBlockIds.length===0;return`<div class="ai-task-row${i?" is-selected":""}"
+        ${a.map(r=>{const s=!t.fixedBlockIds.includes(r.id)||t.fixedBlockIds.length===0;return`<div class="ai-task-row${s?" is-selected":""}"
             data-act="ai-p3-toggle" data-block-id="${v(r.id)}">
-            <div class="ai-check">${i?"✓":""}</div>
+            <div class="ai-check">${s?"✓":""}</div>
             <div style="flex:1;font-size:12.5px;font-weight:600">${v(r.title)}</div>
-            <div style="font-size:10.5px;color:var(--text-4)">${Ct(new Date(r.start).getHours()*60+new Date(r.start).getMinutes())} — ${Ct(new Date(r.end).getHours()*60+new Date(r.end).getMinutes())}</div>
+            <div style="font-size:10.5px;color:var(--text-4)">${qt(new Date(r.start).getHours()*60+new Date(r.start).getMinutes())} — ${qt(new Date(r.end).getHours()*60+new Date(r.end).getMinutes())}</div>
           </div>`}).join("")}
       </div>`}
 </div>
-${ot(3,!0)}`}function Pr(t,e){const a=yt().filter(r=>r.status!=="done").sort((r,i)=>{const o={P1:0,P2:1,P3:2,P4:3},n=r.dueDate&&r.dueDate<e?-100:0,d=i.dueDate&&i.dueDate<e?-100:0;return n!==d?n-d:o[r.priority]-o[i.priority]}).slice(0,10);return`
-${L(4)}
+${dt(3,!0)}`}function Hr(t,e){const a=Dt().filter(r=>r.status!=="done").sort((r,s)=>{const o={P1:0,P2:1,P3:2,P4:3},n=r.dueDate&&r.dueDate<e?-100:0,d=s.dueDate&&s.dueDate<e?-100:0;return n!==d?n-d:o[r.priority]-o[s.priority]}).slice(0,10);return`
+${H(4)}
 <div class="ai-card-body">
-  <div class="ai-question">${v(s.ai.arrange.pages.p4Title)}</div>
-  <div class="ai-hint-text">${v(s.ai.arrange.pages.p4Hint)}</div>
+  <div class="ai-question">${v(i.ai.arrange.pages.p4Title)}</div>
+  <div class="ai-hint-text">${v(i.ai.arrange.pages.p4Hint)}</div>
   <div class="ai-task-list">
-    ${a.map(r=>{const i=t.selectedTaskIds.includes(r.id);return`<div class="ai-task-row${i?" is-selected":""}"
+    ${a.map(r=>{const s=t.selectedTaskIds.includes(r.id);return`<div class="ai-task-row${s?" is-selected":""}"
         data-act="ai-p4-toggle" data-task-id="${v(r.id)}">
-        <div class="ai-check">${i?"✓":""}</div>
-        <div class="ai-pri-dot" style="background:${Cr(r.priority)}"></div>
+        <div class="ai-check">${s?"✓":""}</div>
+        <div class="ai-pri-dot" style="background:${Vr(r.priority)}"></div>
         <div class="ai-task-title">${v(r.title)}</div>
-        <div class="ai-task-est">${r.aiEstimatedMinutes?Br(r.aiEstimatedMinutes):""}</div>
+        <div class="ai-task-est">${r.aiEstimatedMinutes?Or(r.aiEstimatedMinutes):""}</div>
       </div>`}).join("")}
   </div>
 </div>
-${ot(4,!0)}`}function Mr(t,e){const a=yt().filter(r=>r.status!=="done"&&!t.selectedTaskIds.includes(r.id)).slice(0,8);return`
-${L(5)}
+${dt(4,!0)}`}function _r(t,e){const a=Dt().filter(r=>r.status!=="done"&&!t.selectedTaskIds.includes(r.id)).slice(0,8);return`
+${H(5)}
 <div class="ai-card-body">
-  <div class="ai-question">${v(s.ai.arrange.pages.p5Title)}</div>
+  <div class="ai-question">${v(i.ai.arrange.pages.p5Title)}</div>
   ${a.length===0?'<div class="ai-empty-hint">所有任务均已选入，无需确认暂不安排。</div>':`<div class="ai-task-list">
-        ${a.map(r=>{const i=t.skippedTaskIds.includes(r.id);return`<div class="ai-task-row${i?" is-selected":""}"
+        ${a.map(r=>{const s=t.skippedTaskIds.includes(r.id);return`<div class="ai-task-row${s?" is-selected":""}"
             data-act="ai-p5-toggle" data-task-id="${v(r.id)}">
-            <div class="ai-check">${i?"✓":""}</div>
+            <div class="ai-check">${s?"✓":""}</div>
             <div class="ai-task-title">${v(r.title)}</div>
             <div class="ai-task-est">${r.dueDate&&r.dueDate<e?"逾期":r.priority}</div>
           </div>`}).join("")}
       </div>`}
 </div>
-${ot(5,!0,s.ai.arrange.nextBtn+" · 生成草案")}`}function zr(t,e){const a=$(),r=ce(e.dateKey,a),i=t.map(o=>`
+${dt(5,!0,i.ai.arrange.nextBtn+" · 生成草案")}`}function Nr(t,e){const a=$(),r=fe(e.dateKey,a),s=t.map(o=>`
 <div class="ai-draft-row">
-  <div class="ai-draft-time">${ae(o.start)} — ${ae(o.end)}</div>
+  <div class="ai-draft-time">${de(o.start)} — ${de(o.end)}</div>
   <div class="ai-draft-strip ${o.sourceType}"></div>
   <div class="ai-draft-body">
     <div class="ai-draft-title">${v(o.title)}</div>
     ${o.reason?`<div class="ai-draft-reason">${v(o.reason)}</div>`:""}
   </div>
 </div>`).join("");return`
-${L(6)}
+${H(6)}
 <div class="ai-card-body">
-  <div class="ai-question">${v(s.ai.arrange.pages.p6Title)}</div>
-  ${t.length===0?'<div class="ai-empty-hint">可用时间不足以安排所有任务，请尝试调整可用时间段。</div>':`<div class="ai-draft-list">${i}</div>`}
+  <div class="ai-question">${v(i.ai.arrange.pages.p6Title)}</div>
+  ${t.length===0?'<div class="ai-empty-hint">可用时间不足以安排所有任务，请尝试调整可用时间段。</div>':`<div class="ai-draft-list">${s}</div>`}
 </div>
 <div class="ai-card-footer">
-  <button class="ai-skip-btn" data-act="close-ai-schedule" type="button">${v(s.ai.arrange.cancelBtn)}</button>
+  <button class="ai-skip-btn" data-act="close-ai-schedule" type="button">${v(i.ai.arrange.cancelBtn)}</button>
   <div style="flex:1"></div>
-  <button class="ai-prev-btn" data-act="ai-regen" type="button">${v(s.ai.arrange.regenerateBtn)}</button>
+  <button class="ai-prev-btn" data-act="ai-regen" type="button">${v(i.ai.arrange.regenerateBtn)}</button>
   <button class="ai-next-btn" data-act="ai-apply" type="button">
-    ${v(s.ai.arrange.applyBtn)} · ${v(r)} (${t.length}个)
+    ${v(i.ai.arrange.applyBtn)} · ${v(r)} (${t.length}个)
   </button>
-</div>`}function Er(){return`
-${L(8)}
+</div>`}function qr(){return`
+${H(8)}
 <div class="ai-card-body ai-state-body">
   <div class="ai-state-icon success" style="background:var(--success-soft)">
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -2543,71 +2564,86 @@ ${L(8)}
   <div class="ai-state-actions">
     <button class="ai-action-btn is-primary" data-act="close-ai-schedule" type="button">好的</button>
   </div>
-</div>`}function Ar(t,e){switch(t){case"close-ai-schedule":Kt();return;case"ai-use-mock":m={phase:"interview",page:1,data:{dateKey:$(),availStart:7*60,availEnd:23*60,fixedBlockIds:[],selectedTaskIds:[],skippedTaskIds:[]}},B();return;case"ai-prev":m.phase==="interview"&&m.page>1&&(m.page-=1,B());return;case"ai-next":m.phase==="interview"&&(m.page<5?(m.page+=1,B()):ee());return;case"ai-regen":m.phase==="draft"&&ee();return;case"ai-apply":m.phase==="draft"&&jr(m.items);return;case"ai-p1-date":{const a=e.dataset.value;a&&m.phase==="interview"&&(m.data.dateKey=a,B());return}case"ai-p2-avail":{const a=Number(e.dataset.start),r=Number(e.dataset.end);m.phase==="interview"&&(m.data.availStart=a,m.data.availEnd=r,B());return}case"ai-p3-toggle":{const a=e.dataset.blockId;if(!a||m.phase!=="interview")return;const r=m.data.fixedBlockIds,i=r.indexOf(a);i===-1?r.push(a):r.splice(i,1),B();return}case"ai-p4-toggle":{const a=e.dataset.taskId;if(!a||m.phase!=="interview")return;const r=m.data.selectedTaskIds,i=r.indexOf(a);i===-1?r.length<6&&r.push(a):r.splice(i,1),B();return}case"ai-p5-toggle":{const a=e.dataset.taskId;if(!a||m.phase!=="interview")return;const r=m.data.skippedTaskIds,i=r.indexOf(a);i===-1?r.push(a):r.splice(i,1),B();return}}}function ee(){if(m.phase!=="interview"&&m.phase!=="draft")return;const e=(m.phase==="interview",m.data);m={phase:"loading"},B(),setTimeout(()=>{const r=yt().filter(n=>e.selectedTaskIds.includes(n.id)),i=it(e.dateKey).filter(n=>e.fixedBlockIds.includes(n.id)).map(n=>n.id);m={phase:"draft",items:fr({dateKey:e.dateKey,availStart:e.availStart,availEnd:e.availEnd,selectedTasks:r,skipBlocks:i}),data:e},B()},800)}function jr(t){for(const e of t)qt({title:e.title,start:e.start,end:e.end,taskId:e.taskId,source:e.taskId?"task":"ai_draft"});m={phase:"applied"},B(),ut==null||ut()}function Ct(t){return`${String(Math.floor(t/60)).padStart(2,"0")}:${String(t%60).padStart(2,"0")}`}function ae(t){const e=new Date(t);return Ct(e.getHours()*60+e.getMinutes())}function Br(t){if(t<60)return`${t}分`;const e=Math.floor(t/60),a=t%60;return a===0?`${e}h`:`${e}h${a}分`}function Cr(t){return{P1:"var(--danger)",P2:"var(--warning)",P3:"var(--text-4)",P4:"var(--text-4)"}[t]}function v(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}function Lr(){return`
+</div>`}function Fr(t,e){switch(t){case"close-ai-schedule":Jt();return;case"ai-use-mock":m={phase:"interview",page:1,data:{dateKey:$(),availStart:7*60,availEnd:23*60,fixedBlockIds:[],selectedTaskIds:[],skippedTaskIds:[]}},C();return;case"ai-prev":m.phase==="interview"&&m.page>1&&(m.page-=1,C());return;case"ai-next":m.phase==="interview"&&(m.page<5?(m.page+=1,C()):ne());return;case"ai-regen":m.phase==="draft"&&ne();return;case"ai-apply":m.phase==="draft"&&Rr(m.items);return;case"ai-p1-date":{const a=e.dataset.value;a&&m.phase==="interview"&&(m.data.dateKey=a,C());return}case"ai-p2-avail":{const a=Number(e.dataset.start),r=Number(e.dataset.end);m.phase==="interview"&&(m.data.availStart=a,m.data.availEnd=r,C());return}case"ai-p3-toggle":{const a=e.dataset.blockId;if(!a||m.phase!=="interview")return;const r=m.data.fixedBlockIds,s=r.indexOf(a);s===-1?r.push(a):r.splice(s,1),C();return}case"ai-p4-toggle":{const a=e.dataset.taskId;if(!a||m.phase!=="interview")return;const r=m.data.selectedTaskIds,s=r.indexOf(a);s===-1?r.length<6&&r.push(a):r.splice(s,1),C();return}case"ai-p5-toggle":{const a=e.dataset.taskId;if(!a||m.phase!=="interview")return;const r=m.data.skippedTaskIds,s=r.indexOf(a);s===-1?r.push(a):r.splice(s,1),C();return}}}function ne(){if(m.phase!=="interview"&&m.phase!=="draft")return;const e=(m.phase==="interview",m.data);m={phase:"loading"},C(),setTimeout(()=>{const r=Dt().filter(n=>e.selectedTaskIds.includes(n.id)),s=nt(e.dateKey).filter(n=>e.fixedBlockIds.includes(n.id)).map(n=>n.id);m={phase:"draft",items:Ir({dateKey:e.dateKey,availStart:e.availStart,availEnd:e.availEnd,selectedTasks:r,skipBlocks:s}),data:e},C()},800)}function Rr(t){for(const e of t)Yt({title:e.title,start:e.start,end:e.end,taskId:e.taskId,source:e.taskId?"task":"ai_draft"});m={phase:"applied"},C(),mt==null||mt()}function qt(t){return`${String(Math.floor(t/60)).padStart(2,"0")}:${String(t%60).padStart(2,"0")}`}function de(t){const e=new Date(t);return qt(e.getHours()*60+e.getMinutes())}function Or(t){if(t<60)return`${t}分`;const e=Math.floor(t/60),a=t%60;return a===0?`${e}h`:`${e}h${a}分`}function Vr(t){return{P1:"var(--danger)",P2:"var(--warning)",P3:"var(--text-4)",P4:"var(--text-4)"}[t]}function v(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}const It="pms-tl-datepicker",qe="pms-tl-datepicker-scrim";let D=null;function le(){return!!document.getElementById(It)}function Yr(t,e,a){$t();const[r,s]=t.split("-").map(Number);D={selected:t,viewYear:r,viewMonth:s,onConfirm:a};const o=document.createElement("div");o.id=qe,o.style.cssText="position:fixed;inset:0;z-index:560;",o.setAttribute("data-act","close-tldp"),document.body.appendChild(o);const n=document.createElement("div");n.id=It,n.className="tldp-panel",n.innerHTML=Fe(D),document.body.appendChild(n),Kr(n,e)}function $t(){var t,e;(t=document.getElementById(It))==null||t.remove(),(e=document.getElementById(qe))==null||e.remove(),D=null}function Bt(){if(!D)return;const t=document.getElementById(It);t&&(t.innerHTML=Fe(D))}function Kr(t,e){const a=e.getBoundingClientRect(),r=280,s=window.innerWidth,o=window.innerHeight;let n=a.left;n+r>s-8&&(n=s-r-8),n<8&&(n=8);let d=a.bottom+6;const c=t.offsetHeight||360;d+c>o-8&&(d=Math.max(8,a.top-c-6)),t.style.cssText=`position:fixed;left:${n}px;top:${d}px;width:${r}px;z-index:561;`}function Fe(t){const e=$(),a=we(t.viewYear,t.viewMonth),r=[{k:e,l:i.datePicker.today},{k:tt(e,1),l:i.datePicker.tomorrow},{k:xe(e),l:i.datePicker.thisWeekFriday},{k:he(e),l:i.datePicker.nextMonday}],s=a.map(({key:o,date:n,isCurrentMonth:d})=>`<div class="${["dp-cell",o===e?"dp-today":"",o===t.selected?"dp-selected":"",d?"":"dp-other"].filter(Boolean).join(" ")}" data-act="tldp-pick" data-value="${et(o)}">${n}</div>`).join("");return`
+<div class="dp-header">
+  <button class="dp-nav-btn" data-act="tldp-prev" type="button">&#8249;</button>
+  <div class="dp-title">${t.viewYear}年${t.viewMonth}月</div>
+  <button class="dp-nav-btn" data-act="tldp-next" type="button">&#8250;</button>
+</div>
+<div class="dp-shortcuts">
+  ${r.map(o=>`<button class="dp-shortcut${o.k===t.selected?" dp-sc-active":""}"
+    data-act="tldp-pick" data-value="${et(o.k)}" type="button">${et(o.l)}</button>`).join("")}
+</div>
+<div class="dp-weekdays">${i.datePicker.weekdays.map(o=>`<div class="dp-wd">${et(o)}</div>`).join("")}</div>
+<div class="dp-grid">${s}</div>
+<div class="dp-footer">
+  <button class="dp-cancel-btn" data-act="close-tldp" type="button">${et(i.datePicker.cancel)}</button>
+  <button class="dp-confirm-btn" data-act="tldp-confirm" type="button">${et(i.datePicker.confirm)}</button>
+</div>`}function Wr(t,e){if(D)switch(t){case"close-tldp":$t();return;case"tldp-prev":D.viewMonth-=1,D.viewMonth<1&&(D.viewMonth=12,D.viewYear-=1),Bt();return;case"tldp-next":D.viewMonth+=1,D.viewMonth>12&&(D.viewMonth=1,D.viewYear+=1),Bt();return;case"tldp-pick":{const a=e.dataset.value;a&&(D.selected=a,Bt());return}case"tldp-confirm":{const a=D.selected,r=D.onConfirm;$t(),r(a);return}}}function et(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}function Ur(){return`
     <div class="pms-preview-row">
       <div class="pms-preview-row-label">主按钮</div>
-      <button class="pms-primary-button" type="button">${s.preview.btnDefault}</button>
-      <button class="pms-primary-button" type="button" style="background:var(--accent-hover)">${s.preview.btnHover}</button>
-      <button class="pms-primary-button" type="button" autofocus>${s.preview.btnFocus}</button>
-      <button class="pms-primary-button" type="button" disabled>${s.preview.btnDisabled}</button>
+      <button class="pms-primary-button" type="button">${i.preview.btnDefault}</button>
+      <button class="pms-primary-button" type="button" style="background:var(--accent-hover)">${i.preview.btnHover}</button>
+      <button class="pms-primary-button" type="button" autofocus>${i.preview.btnFocus}</button>
+      <button class="pms-primary-button" type="button" disabled>${i.preview.btnDisabled}</button>
     </div>
 
     <div class="pms-preview-row">
       <div class="pms-preview-row-label">次按钮</div>
-      <button class="pms-secondary-button" type="button">${s.preview.btnDefault}</button>
-      <button class="pms-secondary-button" type="button" style="background:var(--bg-2)">${s.preview.btnHover}</button>
-      <button class="pms-secondary-button" type="button" disabled>${s.preview.btnDisabled}</button>
+      <button class="pms-secondary-button" type="button">${i.preview.btnDefault}</button>
+      <button class="pms-secondary-button" type="button" style="background:var(--bg-2)">${i.preview.btnHover}</button>
+      <button class="pms-secondary-button" type="button" disabled>${i.preview.btnDisabled}</button>
     </div>
 
     <div class="pms-preview-row">
       <div class="pms-preview-row-label">文本按钮</div>
-      <button class="pms-text-button" type="button">${s.preview.btnDefault}</button>
-      <button class="pms-text-button" type="button" style="background:var(--accent-a08)">${s.preview.btnHover}</button>
+      <button class="pms-text-button" type="button">${i.preview.btnDefault}</button>
+      <button class="pms-text-button" type="button" style="background:var(--accent-a08)">${i.preview.btnHover}</button>
     </div>
 
     <div class="pms-preview-row">
       <div class="pms-preview-row-label">图标按钮</div>
-      <button class="pms-icon-button" type="button" title="搜索">${C.search}</button>
-      <button class="pms-icon-button" type="button" title="设置">${C.settings}</button>
-      <button class="pms-icon-button" type="button" title="日历">${C.calendar}</button>
-      <button class="pms-icon-button" type="button" title="新增">${C.plus}</button>
+      <button class="pms-icon-button" type="button" title="搜索">${L.search}</button>
+      <button class="pms-icon-button" type="button" title="设置">${L.settings}</button>
+      <button class="pms-icon-button" type="button" title="日历">${L.calendar}</button>
+      <button class="pms-icon-button" type="button" title="新增">${L.plus}</button>
     </div>
 
     <div class="pms-preview-row">
       <div class="pms-preview-row-label">危险按钮</div>
-      <button class="pms-danger-button" type="button">${s.buttons.danger}</button>
-      <button class="pms-danger-button is-secondary" type="button">${s.buttons.danger}</button>
+      <button class="pms-danger-button" type="button">${i.buttons.danger}</button>
+      <button class="pms-danger-button is-secondary" type="button">${i.buttons.danger}</button>
     </div>
 
     <div class="pms-preview-row">
       <div class="pms-preview-row-label">分段控件</div>
       <div class="pms-segmented-control" role="group">
-        <div class="pms-segmented-control-item is-active">${s.stage.segDay}</div>
-        <div class="pms-segmented-control-item">${s.stage.segWeek}</div>
-        <div class="pms-segmented-control-item">${s.stage.segMonth}</div>
+        <div class="pms-segmented-control-item is-active">${i.stage.segDay}</div>
+        <div class="pms-segmented-control-item">${i.stage.segWeek}</div>
+        <div class="pms-segmented-control-item">${i.stage.segMonth}</div>
       </div>
     </div>
-  `}function Hr(){return`
+  `}function Zr(){return`
     <div class="pms-preview-row">
       <div class="pms-preview-row-label">单行输入</div>
-      <input class="pms-text-field" type="text" placeholder="${s.preview.inputPlaceholder}" style="max-width:320px" />
+      <input class="pms-text-field" type="text" placeholder="${i.preview.inputPlaceholder}" style="max-width:320px" />
     </div>
 
     <div class="pms-preview-row">
       <div class="pms-preview-row-label">搜索框</div>
-      <input class="pms-text-field" type="text" placeholder="${s.preview.searchPlaceholder}" style="max-width:320px" />
+      <input class="pms-text-field" type="text" placeholder="${i.preview.searchPlaceholder}" style="max-width:320px" />
     </div>
 
     <div class="pms-preview-row">
       <div class="pms-preview-row-label">多行文本</div>
-      <textarea class="pms-textarea" placeholder="${s.preview.textareaPlaceholder}" style="max-width:520px"></textarea>
+      <textarea class="pms-textarea" placeholder="${i.preview.textareaPlaceholder}" style="max-width:520px"></textarea>
     </div>
 
     <div class="pms-preview-row">
       <div class="pms-preview-row-label">日期选择</div>
       <div class="pms-date-picker" tabindex="0">
-        ${C.calendar}
-        <span>${s.preview.selectDate}</span>
+        ${L.calendar}
+        <span>${i.preview.selectDate}</span>
       </div>
     </div>
 
@@ -2615,7 +2651,7 @@ ${L(8)}
       <div class="pms-preview-row-label">禁用态</div>
       <input class="pms-text-field" type="text" value="此项不可编辑" disabled style="max-width:320px" />
     </div>
-  `}function _r(){const t=Z().projects[0],e=t?`var(${t.colorToken})`:"var(--neutral-aux)",a=(t==null?void 0:t.name)??"主业";return`
+  `}function Gr(){const t=J().projects[0],e=t?`var(${t.colorToken})`:"var(--neutral-aux)",a=(t==null?void 0:t.name)??"主业";return`
     <div class="pms-preview-row">
       <div class="pms-preview-row-label">任务卡</div>
       <div class="pms-task-card" style="max-width:280px">
@@ -2678,22 +2714,22 @@ ${L(8)}
 
     <div class="pms-preview-row">
       <div class="pms-preview-row-label">项目色 token</div>
-      ${Z().projects.map(r=>`
+      ${J().projects.map(r=>`
         <div class="pms-task-pool-card" style="max-width:200px;--neutral-aux:var(${r.colorToken})">
-          <div class="pms-task-pool-card-title">${Nr(r.name)}</div>
+          <div class="pms-task-pool-card-title">${Jr(r.name)}</div>
           <div class="pms-task-card-meta">
             <span class="pms-text-button" style="color:var(${r.colorToken});padding:0">${r.colorToken}</span>
           </div>
         </div>
       `).join("")}
     </div>
-  `}function Nr(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}function qr(){return`
+  `}function Jr(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}function Xr(){return`
     <div class="pms-preview-row">
       <div class="pms-preview-row-label">空状态</div>
       <div style="width:320px;border:1px solid var(--border);border-radius:var(--r-4)">
         <div class="pms-empty-state">
-          <div class="pms-empty-state-title">${s.states.emptyTitle}</div>
-          <div class="pms-empty-state-hint">${s.states.emptyHint}</div>
+          <div class="pms-empty-state-title">${i.states.emptyTitle}</div>
+          <div class="pms-empty-state-hint">${i.states.emptyHint}</div>
         </div>
       </div>
     </div>
@@ -2702,8 +2738,8 @@ ${L(8)}
       <div class="pms-preview-row-label">收件箱空</div>
       <div style="width:320px;border:1px solid var(--border);border-radius:var(--r-4)">
         <div class="pms-empty-state">
-          <div class="pms-empty-state-title">${s.states.inboxEmpty}</div>
-          <div class="pms-empty-state-hint">${s.states.inboxHint}</div>
+          <div class="pms-empty-state-title">${i.states.inboxEmpty}</div>
+          <div class="pms-empty-state-hint">${i.states.inboxHint}</div>
         </div>
       </div>
     </div>
@@ -2721,39 +2757,39 @@ ${L(8)}
       <div class="pms-preview-row-label">加载文字</div>
       <div style="display:flex;align-items:center;gap:var(--sp-2);color:var(--text-3);font-size:var(--fs-body-sm)">
         <div style="width:14px;height:14px;border:2px solid var(--bg-3);border-top-color:var(--accent);border-radius:50%;animation:pms-spin 0.7s linear infinite"></div>
-        ${s.states.loading}
+        ${i.states.loading}
       </div>
     </div>
 
     <div class="pms-preview-row">
       <div class="pms-preview-row-label">加载失败</div>
-      <div style="color:var(--danger);font-size:var(--fs-body-sm)">${s.states.loadFailed}</div>
+      <div style="color:var(--danger);font-size:var(--fs-body-sm)">${i.states.loadFailed}</div>
     </div>
     <style>
       @keyframes pms-spin { to { transform: rotate(360deg); } }
     </style>
-  `}function Fr(){const t=document.getElementById("app");if(!t)return;if(new URL(window.location.href).searchParams.get("demo")==="components"){Wr(t);return}Rr(t),Or(t),Xa(()=>A()),sr(()=>A()),hr(()=>A()),document.addEventListener("pms-open-task-drawer",a=>{var i;const r=(i=a.detail)==null?void 0:i.taskId;r&&Te(r)})}function Rr(t){t.className="pms-app-m1",t.innerHTML=`
-    ${Je()}
+  `}function Qr(){const t=document.getElementById("app");if(!t)return;if(new URL(window.location.href).searchParams.get("demo")==="components"){si(t);return}ti(t),ei(t),nr(()=>A()),vr(()=>A()),Pr(()=>A()),document.addEventListener("pms-open-task-drawer",a=>{var s;const r=(s=a.detail)==null?void 0:s.taskId;r&&Be(r)})}function ti(t){t.className="pms-app-m1",t.innerHTML=`
+    ${da()}
     <div class="pms-app-body">
-      ${ge()}
-      ${ye()}
+      ${Ie()}
+      ${ze()}
       <div class="pms-content-area">
-        ${we()}
+        ${Me()}
       </div>
-      ${$e()}
+      ${Ae()}
     </div>
-    ${Qa()}
-    ${Ee()}
-    ${Kr()}
-  `;const e=document.getElementById("pms-pool-list");e&&ke(e),Yt(),setTimeout(()=>{const a=document.getElementById("pms-tl-scroll"),r=document.getElementById("pms-now-line");if(a&&r){const i=parseInt(r.style.top||"0",10);a.scrollTop=Math.max(0,i-a.clientHeight/3)}},100)}function A(){const t=document.getElementById("app");if(!t)return;const e=t.querySelector(".pms-sidebar"),a=t.querySelector(".pms-taskpool"),r=t.querySelector(".tl-container"),i=t.querySelector(".pms-right-sidebar");e&&(e.outerHTML=ge()),a&&(a.outerHTML=ye()),r&&(r.outerHTML=we()),i&&(i.outerHTML=$e());const o=document.getElementById("pms-pool-list");o&&ke(o),Yt()}function Or(t){document.addEventListener("click",e=>{const a=e.target,r=a.closest("[data-act^='tbp-'], [data-act='close-tb-popover']");if(r&&Mt()){dr(r.dataset.act,r),e.stopPropagation();return}const i=a.closest("[data-act^='ai-'], [data-act='close-ai-schedule']");if(i){const n=i.dataset.act;Ar(n,i),e.stopPropagation();return}const o=a.closest("[data-act='close-review'], [data-act='save-review']");if(o){gr(o.dataset.act),e.stopPropagation();return}}),document.addEventListener("input",e=>{const a=e.target;Mt()&&a.classList.contains("tbp-title-input")&&lr(a)}),t.addEventListener("click",e=>{const a=e.target,r=a.closest("[data-act]");if(r){const d=r.dataset.act;if(d==="open-changelog"){re("pms-changelog-modal");return}if(d==="open-settings"){re("pms-settings-modal");return}if(d==="close-modal"){if(r.classList.contains("pms-modal-scrim")&&r!==a)return;Lt();return}if(d==="close-drawer"){ht();return}if(d==="settings-reset"){Yr();return}if(d==="open-ai-schedule"){wr();return}if(d==="tl-prev-day"){Pa(),A();return}if(d==="tl-next-day"){Sa(),A();return}if(d==="tl-today"){Ia(),A();return}if(d==="pool-collapse"){Ha(),A();return}if(d==="pool-filter"){const c=r.dataset.value;c&&(La(c),A());return}if(d==="pool-arrange"||d==="pool-rearrange"){Pt(void 0,r);return}if(d==="add-timeblock"){Pt(void 0,r);return}if(d==="tl-card-start"||d==="tl-card-done"||d==="tl-card-review"){const c=r.closest("[data-block-id]"),p=c==null?void 0:c.dataset.blockId;if(!p)return;d==="tl-card-start"?(Gt(p,"running"),A()):d==="tl-card-done"?(Gt(p,"done"),A()):d==="tl-card-review"&&vr(p,r);return}return}const i=a.closest("[data-block-id]");if(i!=null&&i.dataset.blockId&&!a.closest("[data-act]")){Pt(i.dataset.blockId,i);return}const o=a.closest("[data-task-id]");if(o!=null&&o.dataset.taskId&&!a.closest("[data-act]")){Te(o.dataset.taskId);return}const n=a.closest("[data-nav]");n&&(t.querySelectorAll(".pms-sidebar-nav-item").forEach(d=>d.classList.remove("is-active")),n.classList.add("is-active"))}),t.addEventListener("dragover",e=>{e.target.closest("#pms-tl-inner")&&e.preventDefault()}),t.addEventListener("drop",e=>{var i;const a=e.target.closest("#pms-tl-inner");if(!a)return;e.preventDefault();const r=(i=e.dataTransfer)==null?void 0:i.getData("text/plain");r&&Vr(r,e,a)}),document.addEventListener("keydown",e=>{var a;if(e.key==="Escape"){if(document.querySelector(".pms-modal-scrim[style*='flex']")){Lt();return}if(document.getElementById("pms-ai-schedule-card")){Kt();return}if(document.getElementById("pms-review-flyout")){J();return}if(Mt()){rt();return}if((a=document.getElementById("pms-task-detail-drawer"))!=null&&a.classList.contains("is-open")){ht();return}}}),Yt()}function Yt(){const t=document.getElementById("pms-quick-capture");t&&!t.dataset.bound&&(t.dataset.bound="1",t.addEventListener("keydown",e=>{var r;if(e.key!=="Enter")return;const a=t.value.trim();a&&(fa(a),t.value="",A(),(r=document.getElementById("pms-quick-capture"))==null||r.focus())}))}function Vr(t,e,a){const r=N(t);if(!r)return;const i=a.getBoundingClientRect(),o=document.getElementById("pms-tl-scroll"),n=o?o.scrollTop:0,c=(e.clientY-i.top+n)/W*60,p=Math.max(0,Math.min(bt(c,15),23*60)),u=r.aiEstimatedMinutes??60,g=Math.min(p+u,24*60-1),f=he();qt({title:r.title,start:Q(f,K(p)),end:Q(f,K(g)),taskId:t,source:"task"}),A()}function Ee(){const t=Z(),e=_e();return Ae("pms-settings-modal",s.topbar.settings,`<div class="pms-modal-section">
+    ${dr()}
+    ${Re()}
+    ${ri()}
+  `;const e=document.getElementById("pms-pool-list");e&&Ee(e),Xt(),setTimeout(()=>{const a=document.getElementById("pms-tl-scroll"),r=document.getElementById("pms-now-line");if(a&&r){const s=parseInt(r.style.top||"0",10);a.scrollTop=Math.max(0,s-a.clientHeight/3)}},100)}function A(){const t=document.getElementById("app");if(!t)return;const e=t.querySelector(".pms-sidebar"),a=t.querySelector(".pms-taskpool"),r=t.querySelector(".tl-container"),s=t.querySelector(".pms-right-sidebar");e&&(e.outerHTML=Ie()),a&&(a.outerHTML=ze()),r&&(r.outerHTML=Me()),s&&(s.outerHTML=Ae());const o=document.getElementById("pms-pool-list");o&&Ee(o),Xt()}function ei(t){document.addEventListener("click",e=>{const a=e.target,r=a.closest("[data-act^='tbp-'], [data-act='close-tb-popover']");if(r&&jt()){fr(r.dataset.act,r),e.stopPropagation();return}const s=a.closest("[data-act^='ai-'], [data-act='close-ai-schedule']");if(s){const d=s.dataset.act;Fr(d,s),e.stopPropagation();return}const o=a.closest("[data-act='close-review'], [data-act='save-review']");if(o){Tr(o.dataset.act),e.stopPropagation();return}const n=a.closest("[data-act^='tldp-'], [data-act='close-tldp']");if(n&&le()){Wr(n.dataset.act,n),e.stopPropagation();return}}),document.addEventListener("input",e=>{const a=e.target;jt()&&a.classList.contains("tbp-title-input")&&xr(a)}),t.addEventListener("click",e=>{const a=e.target,r=a.closest("[data-act]");if(r){const d=r.dataset.act;if(d==="open-changelog"){ce("pms-changelog-modal");return}if(d==="open-settings"){ce("pms-settings-modal");return}if(d==="close-modal"){if(r.classList.contains("pms-modal-scrim")&&r!==a)return;Ft();return}if(d==="close-drawer"){yt();return}if(d==="settings-reset"){ii();return}if(d==="open-ai-schedule"){Mr();return}if(d==="tl-prev-day"){Ha(),A();return}if(d==="tl-next-day"){La(),A();return}if(d==="tl-today"){Ca(),A();return}if(d==="tl-open-date-picker"){Yr(Wt(),r,c=>{Ba(c),A()});return}if(d==="pool-collapse"){Ka(),A();return}if(d==="pool-filter"){const c=r.dataset.value;c&&(Ya(c),A());return}if(d==="pool-arrange"||d==="pool-rearrange"){At(void 0,r);return}if(d==="add-timeblock"){At(void 0,r);return}if(d==="tl-card-start"||d==="tl-card-done"||d==="tl-card-review"){const c=r.closest("[data-block-id]"),p=c==null?void 0:c.dataset.blockId;if(!p)return;d==="tl-card-start"?(ae(p,"running"),A()):d==="tl-card-done"?(ae(p,"done"),A()):d==="tl-card-review"&&kr(p,r);return}return}const s=a.closest("[data-block-id]");if(s!=null&&s.dataset.blockId&&!a.closest("[data-act]")){At(s.dataset.blockId,s);return}const o=a.closest("[data-task-id]");if(o!=null&&o.dataset.taskId&&!a.closest("[data-act]")){Be(o.dataset.taskId);return}const n=a.closest("[data-nav]");n&&(t.querySelectorAll(".pms-sidebar-nav-item").forEach(d=>d.classList.remove("is-active")),n.classList.add("is-active"))}),t.addEventListener("dragover",e=>{e.target.closest("#pms-tl-inner")&&e.preventDefault()}),t.addEventListener("drop",e=>{var s;const a=e.target.closest("#pms-tl-inner");if(!a)return;e.preventDefault();const r=(s=e.dataTransfer)==null?void 0:s.getData("text/plain");r&&ai(r,e,a)}),document.addEventListener("keydown",e=>{var a;if(e.key==="Escape"){if(document.querySelector(".pms-modal-scrim[style*='flex']")){Ft();return}if(document.getElementById("pms-ai-schedule-card")){Jt();return}if(document.getElementById("pms-review-flyout")){Q();return}if(le()){$t();return}if(jt()){st();return}if((a=document.getElementById("pms-task-detail-drawer"))!=null&&a.classList.contains("is-open")){yt();return}}}),Xt()}function Xt(){const t=document.getElementById("pms-quick-capture");t&&!t.dataset.bound&&(t.dataset.bound="1",t.addEventListener("keydown",e=>{var r;if(e.key!=="Enter")return;const a=t.value.trim();a&&(Ta(a),t.value="",A(),(r=document.getElementById("pms-quick-capture"))==null||r.focus())}))}function ai(t,e,a){const r=q(t);if(!r)return;const s=a.getBoundingClientRect(),o=document.getElementById("pms-tl-scroll"),n=o?o.scrollTop:0,c=(e.clientY-s.top+n)/Z*60,p=Math.max(0,Math.min(ft(c,15),23*60)),u=r.aiEstimatedMinutes??60,g=Math.min(p+u,24*60-1),f=Wt();Yt({title:r.title,start:at(f,K(p)),end:at(f,K(g)),taskId:t,source:"task"}),A()}function Re(){const t=J(),e=Ze();return Oe("pms-settings-modal",i.topbar.settings,`<div class="pms-modal-section">
       <div class="pms-modal-section-title">本地数据状态</div>
-      ${e?`<p style="color:var(--warning);font-weight:500">提示：${dt(e)}</p>`:""}
+      ${e?`<p style="color:var(--warning);font-weight:500">提示：${ct(e)}</p>`:""}
       <ul style="list-style:none;padding:0;margin:0;font-size:13px;line-height:1.9">
-        <li><strong>schemaVersion：</strong>${dt(vt)}</li>
-        <li><strong>存储 key：</strong><code>${dt(Ht)}</code></li>
-        <li><strong>任务数：</strong>${t.tasks.length}（未完成 ${ue()} · 已完成 ${ve()} · 收件箱 ${pe()}）</li>
+        <li><strong>schemaVersion：</strong>${ct(bt)}</li>
+        <li><strong>存储 key：</strong><code>${ct(Rt)}</code></li>
+        <li><strong>任务数：</strong>${t.tasks.length}（未完成 ${ke()} · 已完成 ${$e()} · 收件箱 ${ye()}）</li>
         <li><strong>时间块数：</strong>${t.timeBlocks.length}</li>
-        <li><strong>最后更新：</strong>${Ur(t.meta.updatedAt)}</li>
+        <li><strong>最后更新：</strong>${oi(t.meta.updatedAt)}</li>
       </ul>
     </div>
     <div class="pms-modal-section">
@@ -2763,9 +2799,9 @@ ${L(8)}
     </div>
     <div class="pms-modal-section">
       <div class="pms-modal-section-title">关于</div>
-      <p>${s.brand.name} · ${s.brand.tagline}</p>
-      <p style="color:var(--text-3);font-size:12px">M1-New.3R · data schema ${dt(vt)}</p>
-    </div>`)}function Kr(){return Ae("pms-changelog-modal",s.topbar.devLog,`<div class="pms-modal-section">
+      <p>${i.brand.name} · ${i.brand.tagline}</p>
+      <p style="color:var(--text-3);font-size:12px">M1-New.3R · data schema ${ct(bt)}</p>
+    </div>`)}function ri(){return Oe("pms-changelog-modal",i.topbar.devLog,`<div class="pms-modal-section">
       <div class="pms-modal-section-title">M1-New.3R 变更</div>
       <ul style="list-style:none;padding:0;margin:0;font-size:13px;line-height:1.9;color:var(--text-2)">
         <li>· 四栏布局（左导航 + 任务池 + 时间轴 + 右侧栏）</li>
@@ -2779,7 +2815,7 @@ ${L(8)}
         <li>· AI 安排日程 8 页访谈卡片（本地模拟排程）</li>
         <li>· 任务从任务池拖入时间轴</li>
       </ul>
-    </div>`)}function Ae(t,e,a){return`<div class="pms-modal-scrim" id="${t}" data-act="close-modal" style="display:none">
+    </div>`)}function Oe(t,e,a){return`<div class="pms-modal-scrim" id="${t}" data-act="close-modal" style="display:none">
   <div class="pms-modal-card">
     <div class="pms-modal-header">
       <div class="pms-modal-title">${e}</div>
@@ -2792,34 +2828,34 @@ ${L(8)}
     </div>
     <div class="pms-modal-body">${a}</div>
   </div>
-</div>`}function re(t){if(t==="pms-settings-modal"){const a=document.getElementById("pms-settings-modal");a&&(a.outerHTML=Ee())}const e=document.getElementById(t);e&&(e.style.display="flex")}function Lt(){document.querySelectorAll(".pms-modal-scrim").forEach(t=>{t.style.display="none"})}let at=!1;function Yr(){const t=document.querySelector('[data-act="settings-reset"]');if(t){if(!at){at=!0,t.textContent="再次点击确认恢复（5 秒内有效）",t.classList.remove("is-secondary"),setTimeout(()=>{at&&(at=!1,t.textContent="恢复默认种子（清空当前数据）",t.classList.add("is-secondary"))},5e3);return}He(),at=!1,ht(),Lt(),A()}}function Wr(t){t.className="",t.style.display="block",t.innerHTML=`
+</div>`}function ce(t){if(t==="pms-settings-modal"){const a=document.getElementById("pms-settings-modal");a&&(a.outerHTML=Re())}const e=document.getElementById(t);e&&(e.style.display="flex")}function Ft(){document.querySelectorAll(".pms-modal-scrim").forEach(t=>{t.style.display="none"})}let it=!1;function ii(){const t=document.querySelector('[data-act="settings-reset"]');if(t){if(!it){it=!0,t.textContent="再次点击确认恢复（5 秒内有效）",t.classList.remove("is-secondary"),setTimeout(()=>{it&&(it=!1,t.textContent="恢复默认种子（清空当前数据）",t.classList.add("is-secondary"))},5e3);return}Ue(),it=!1,yt(),Ft(),A()}}function si(t){t.className="",t.style.display="block",t.innerHTML=`
 <div class="pms-preview-header">
   <div>
-    <div class="pms-stage-header-eyebrow">${s.brand.name} · ${s.brand.tagline}</div>
-    <div style="font-size:18px;font-weight:600;margin-top:4px">${s.preview.title}</div>
+    <div class="pms-stage-header-eyebrow">${i.brand.name} · ${i.brand.tagline}</div>
+    <div style="font-size:18px;font-weight:600;margin-top:4px">${i.preview.title}</div>
   </div>
-  <a class="pms-text-button" href="/">${s.preview.backToMain}</a>
+  <a class="pms-text-button" href="/">${i.preview.backToMain}</a>
 </div>
 <div class="pms-preview-page">
   <section class="pms-preview-section">
-    <div class="pms-preview-section-title">${s.preview.buttons}</div>
-    ${Lr()}
+    <div class="pms-preview-section-title">${i.preview.buttons}</div>
+    ${Ur()}
   </section>
   <section class="pms-preview-section">
-    <div class="pms-preview-section-title">${s.preview.inputs}</div>
-    ${Hr()}
+    <div class="pms-preview-section-title">${i.preview.inputs}</div>
+    ${Zr()}
   </section>
   <section class="pms-preview-section">
-    <div class="pms-preview-section-title">${s.preview.cards}</div>
-    ${_r()}
+    <div class="pms-preview-section-title">${i.preview.cards}</div>
+    ${Gr()}
   </section>
   <section class="pms-preview-section">
-    <div class="pms-preview-section-title">${s.preview.ai}</div>
-    <div style="max-width:520px">${De()}</div>
+    <div class="pms-preview-section-title">${i.preview.ai}</div>
+    <div style="max-width:520px">${je()}</div>
   </section>
   <section class="pms-preview-section">
-    <div class="pms-preview-section-title">${s.preview.states}</div>
-    ${qr()}
+    <div class="pms-preview-section-title">${i.preview.states}</div>
+    ${Xr()}
   </section>
-</div>`}function dt(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}function Ur(t){try{const e=new Date(t);return`${e.getFullYear()}-${lt(e.getMonth()+1)}-${lt(e.getDate())} ${lt(e.getHours())}:${lt(e.getMinutes())}`}catch{return t}}function lt(t){return String(t).padStart(2,"0")}function se(){Ce(),oe(),Fr(),typeof window<"u"&&console.info("%c无限进步 · M1-New.2","color:#2B54C9;font-weight:600;font-size:13px","· localStorage: wuxianjinbu-data-v1· schema v1 · 无 /api 无 SW")}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",se):se();
-//# sourceMappingURL=index-CaIFSr7p.js.map
+</div>`}function ct(t){return(t??"").replace(/[&<>"']/g,e=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[e])}function oi(t){try{const e=new Date(t);return`${e.getFullYear()}-${pt(e.getMonth()+1)}-${pt(e.getDate())} ${pt(e.getHours())}:${pt(e.getMinutes())}`}catch{return t}}function pt(t){return String(t).padStart(2,"0")}function pe(){Ke(),ve(),Qr(),typeof window<"u"&&console.info("%c无限进步 · M1-New.2","color:#2B54C9;font-weight:600;font-size:13px","· localStorage: wuxianjinbu-data-v1· schema v1 · 无 /api 无 SW")}document.readyState==="loading"?document.addEventListener("DOMContentLoaded",pe):pe();
+//# sourceMappingURL=index-CDEJBMYu.js.map
